@@ -14,7 +14,8 @@
 }
 
 .atas {
-    height: 100vh;
+    min-height: 670px;
+    height: 100%;
     background-image: var(--Atas-color);
     background-position: center;
     background-size: cover;
@@ -23,8 +24,8 @@
     text-align: center;
     margin: auto;
     z-index: 1;
+    padding-bottom: 10px;
 }
-
 
 #logo {
     position: absolute;
