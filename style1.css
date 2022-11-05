@@ -9,7 +9,7 @@
 }
 
 :root{
-    --Atas-color: linear-gradient(rgba(30, 34, 51, 0.7),rgba(30, 34, 51, 0.7)), url(img/bg.jpg);
+    --Atas-color: linear-gradient(rgba(30, 34, 51, 0.7),rgba(30, 34, 51, 0.7)), url(assets/bg.jpg);
     --form-color: linear-gradient(142deg, rgba(136,254,254,0.4768177534685749) 0%, rgba(38,106,108,0.972616072796306) 100%);
 }
 
