@@ -1,8 +1,10 @@
 <?php 
     session_start();
-    // if ($_SESSION["priv"] != "admin") {
-    //     header("Location: ../../login.php");
-    // }
+    if ($_SESSION["priv"] != "admin") {
+        header("Location: ../../login.php");
+    }
+
+    require '../../koneksi.php';
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +29,7 @@
                     <li> <a href="admin.php"> HOME </a></li>
                     <li> <a href="#product"> PRODUCT </a></li>
                     <li> <a href="kelola.php"> KELOLA </a></li>
-                    <li> <a href="logout.php"> LOGOUT </a></li>
+                    <li> <a href="../../logout.php"> LOGOUT </a></li>
                     <li>
                         <label>
                             <input type="checkbox" class="checkbox" id="tombol">
@@ -54,221 +56,95 @@
     </div>
 
     <div class="bawahHome">
-        <div class="produk">
-            <h1 id="product"> Best Seller Dari AnharZtore </h1>
-            <p> Berbagai macam produk smarthphone dengan berbagai variasi harga yang pastinya murah meriah, aman di kantong, dan pastinya amanah, serta istiqomah </p>
-            <div class="baris1">
-                <div class="kolom">
-                    <div class="produk-detail">
-                        <div class="produk-img">
-                            <img src="img/samsung.png">
-                        </div>
-                        <div class="desc-produk">
-                            Rp 3.456.000  
-                            <br>
-                            1080x2400 px
-                            <br>
-                            6/8GB RAM
-                            <br>
-                            Snapdragon 730
-                            <br>
-                            48MP
-                            <br>
-                            4500mAh
-                        </div>
-                    </div>
-                    <div class="merk">
-                        Samsung Galaxy A71
-                    </div>
-                </div>
-                <div class="kolom">
-                    <div class="produk-detail">
-                        <div class="produk-img">
-                            <img src="img/ipon.png">
-                        </div>
-                        <div class="desc-produk">
-                            Rp 3.456.000 
-                            <br>
-                            1284x2778 px
-                            <br>
-                            6GB RAM
-                            <br>
-                            Apple A15 Bionic
-                            <br>
-                            12MP
-                            <br>
-                            4352mAh
-                        </div>
-                    </div>
-                    <div class="merk">
-                        Apple iPhone 14 Pro Max
-                    </div>
-                </div>
-                <div class="kolom">
-                    <div class="produk-detail">
-                        <div class="produk-img">
-                            <img src="img/vivo.png">
-                        </div>
-                        <div class="desc-produk">
-                            Rp 3.456.000 
-                            <br>
-                            1080x2376 px
-                            <br>
-                            8/12GB RAM
-                            <br>
-                            Dimensity 1300
-                            <br>
-                            64MP
-                            <br>
-                            4830mAh
-                        </div>
-                    </div>
-                    <div class="merk">
-                        Vivo V25 Pro Max
-                    </div>
-                </div>
+    <div class="container" id="product">
+            <h1> Best Seller Dari AnharZtore </h1>
+            <p class="best-seller"> Berbagai macam produk smarthphone dengan berbagai variasi harga yang pastinya murah meriah, aman di kantong, dan pastinya amanah, serta istiqomah </p>
+            <div class="box-produk">
+                <?php
+                    $result = mysqli_query($conn, "SELECT * FROM produk");
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<div class='produk'>";
+                            echo "<img src='../../img/$row[gambar]' alt='Gambar Produk'>";
+                            echo "<div class='deskripsi-produk'>";
+                                echo "<h4 class='judul'>$row[nama]</h4>";
+                                echo "<p class='harga'>Rp $row[harga]</p>";
+                                echo "<a href='cek_login.php' class='btn-produk'>Beli Sekarang</a>";
+                            echo "</div>";
+                        echo "</div>";
+                    }
+                ?>
             </div>
-            <div class="baris2">
-                <div class="kolom">
-                    <div class="produk-detail">
-                        <div class="produk-img">
-                            <img src="img/realme.png">
-                        </div>
-                        <div class="desc-produk">
-                            Rp 3.456.000 
-                            <br>
-                            1080x2400 px
-                            <br>
-                            6/8GB RAM
-                            <br>
-                            Dimensity 920
-                            <br>
-                            50MP
-                            <br>
-                            4500mAh
-                        </div>
-                    </div>
-                    <div class="merk">
-                        Realme GT Neo 3T
-                    </div>
-                </div>
-                <div class="kolom">
-                    <div class="produk-detail">
-                        <div class="produk-img">
-                            <img src="img/oppo.png">
-                        </div>
-                        <div class="desc-produk">
-                            Rp 3.456.000 
-                            <br>
-                            1080x2412 px
-                            <br>
-                            8/12GB RAM
-                            <br>
-                            Dimensity 8100-Max
-                            <br>
-                            50MP
-                            <br>
-                            4500mAh
-                        </div>
-                    </div>
-                    <div class="merk">
-                        Oppo Reno8 Pro
-                    </div>
-                </div>
-                <div class="kolom">
-                    <div class="produk-detail">
-                        <div class="produk-img">
-                            <img src="img/xiaomi.png">
-                        </div>
-                        <div class="desc-produk">
-                            Rp 3.456.000 
-                            <br>
-                            1080x2400 px
-                            <br>
-                            6/8GB RAM
-                            <br>
-                            Snapdragon 695 5G
-                            <br>
-                            108MP
-                            <br>
-                            5000mAh
-                        </div>
-                    </div>
-                    <div class="merk">
-                        Xiaomi Poco X4 Pro 5G
-                    </div>
-                </div>
-            </div>
-        </div>
 
-    <!-- review -->
-        <div class="review">
-            <h1> Review Dari Para Customer Kami </h1>
-            <div class="baris">
-                <div class="kolomReview">
-                    <img src="img/rizky.jpg">
-                    <div>
-                        <p>
-                            Tempatnya trusted, adminnya fast respon, terbaeklah pokonya, never gonna give u up
-                        </p>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star-half-o" ></i>
-                        <h2> Rizky Slebew </h2>
+            <!-- review -->
+            <div class="review">
+                <h1> Review Dari Para Customer Kami </h1>
+                <div class="baris">
+                    <div class="kolomReview">
+                        <img src="../../assets/rizky.jpg">
+                        <div>
+                            <p>
+                                Tempatnya trusted, adminnya fast respon, terbaeklah pokonya, never gonna give u up
+                            </p>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                            <h2> Rizky Slebew </h2>
+                        </div>
+                    </div>
+                    <div class="kolomReview">
+                        <img src="../../assets/rangga.jpg">
+                        <div>
+                            <p>
+                                Saya awalnya dapat ingfo dari andri, tempatnya trusted, sayangnya gaada gratis rokok
+                            </p>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <h2> Rangga Banyak tanya </h2>
+                        </div>
                     </div>
                 </div>
-                <div class="kolomReview">
-                    <img src="img/rangga.jpg">
-                    <div>
-                        <p>
-                            Saya awalnya dapat ingfo dari andri, tempatnya trusted, sayangnya gaada gratis rokok
-                        </p>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star-o" ></i>
-                        <i class="fa fa-star-o" ></i>
-                        <h2> Rangga Banyak tanya </h2>
+                <div class="baris2Review">
+                    <div class="kolomReview">
+                        <img src="../../assets/terkadang.jpg">
+                        <div>
+                            <p>
+                                Awalnya saya coba coba cukur mullet, eh ternyata membuatku kepelet, bintang 5 deh
+                            </p>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <h2> Terkadang Mullet </h2>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="baris2Review">
-                <div class="kolomReview">
-                    <img src="img/terkadang.jpg">
-                    <div>
-                        <p>
-                            Awalnya saya coba coba cukur mullet, eh ternyata membuatku kepelet, bintang 5 deh
-                        </p>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <h2> Terkadang Mullet </h2>
-                    </div>
+
+            <!-- footer -->
+            <footer>
+                <div class="footer">
+                    <p>
+                        Jangan lupa belanja di AnharZtore, serta follow akun ig saya <a href="https://www.instagram.com/anharrrrrr_/" id="ig"> @anharrrrrr_ </a>
+                        <br>
+                        Demikian tampilan web Posttest 5 saya, wassalamualaikum warahmatullahi wabarakatuh
+                    </p>
                 </div>
-            </div>
+                <div id="kontak">
+                    <i class="fa fa-whatsapp"> 085845723207 </i>
+                    <i class="fa fa-instagram"> anharrrrrr_ </i>
+                    <i class="fa fa-envelope-o"> anharkhoirun@gmail.com </i>
+                    <i class="fa fa-github"> Anhar12 </i>
+                </div>
+                <p> @Copyright 2022 - anharrrslbw - Made with HTML, CSS, JS, & PHP </p>
+            </footer>
+
         </div>
-        
-        <!-- footer -->
-        <footer>
-            <div class="footer">
-                <p>
-                    Jangan lupa belanja di AnharZtore, serta follow akun ig saya <a href="https://www.instagram.com/anharrrrrr_/" id="ig"> @anharrrrrr_ </a> 
-                    <br>
-                    Demikian tampilan web Posttest 5 saya, wassalamualaikum warahmatullahi wabarakatuh
-                </p>
-            </div>
-            <div id="kontak">
-                <i class="fa fa-whatsapp"> 085845723207 </i>
-                <i class="fa fa-instagram"> anharrrrrr_ </i>
-                <i class="fa fa-envelope-o"> anharkhoirun@gmail.com </i>
-                <i class="fa fa-github"> Anhar12 </i>
-            </div>
-            <p> @Copyright 2022 - anharrrslbw - Made with HTML, CSS, JS, & PHP </p>
-        </footer>
 
     </div>
     <script src="scriptidx.js"></script>
