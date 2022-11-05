@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if ($_SESSION["priv"] != "user" and $_SESSION["priv"] != "admin") {
-        header("Location: login.php");
+        header("Location: ../login.php");
     }
 
     require '../koneksi.php';
