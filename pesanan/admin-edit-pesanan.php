@@ -1,7 +1,7 @@
 <?php
     session_start();
-    if ($_SESSION["priv"] != "user" and $_SESSION["priv"] != "admin") {
-        header("Location: login.php");
+    if ($_SESSION["priv"] != "admin") {
+        header("Location: ../login.php");
     }
 
     require '../koneksi.php';
@@ -56,17 +56,10 @@
             <a href="index.html" id="logo"> Anhar <font color="#f86909"> Ztore </font> </a>
             <div class="navbar">
                 <ul>
-                    <li> <a href="user.php"> HOME </a></li>
-                    <li> <a href="user.php"> PRODUCT </a></li>
-                    <?php
-                        if ($_SESSION["priv"] == "user"){
-                            echo "<li> <a href='order_user.php'> ORDER </a></li>";
-                            echo "<li> <a href='aboutUser.php'> ABOUT </a></li>";
-                        } else {
-                            echo "<li> <a href='kelola.php'> KELOLA </a></li>";
-                        }
-                    ?>
-                    <li> <a href="logout.php"> LOGOUT </a></li>
+                    <li> <a href="../pengguna/admin/admin.php"> HOME </a></li>
+                    <li> <a href="../pengguna/admin/admin.php"> PRODUCT </a></li>
+                    <li> <a href='../pengguna/admin/kelola.php'> KELOLA </a></li>
+                    <li> <a href="../logout.php"> LOGOUT </a></li>
                     <li>
                         <label>
                             <input type="checkbox" class="checkbox" id="tombol">
