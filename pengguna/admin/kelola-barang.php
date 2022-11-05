@@ -1,8 +1,8 @@
 <?php
     session_start();
-    // if ($_SESSION["priv"] != "admin") {
-    //     header("Location: login.php");
-    // }
+    if ($_SESSION["priv"] != "admin") {
+        header("Location: ../../login.php");
+    }
 
     require "../../koneksi.php";
 
@@ -35,7 +35,7 @@
                     <li> <a href="admin.php"> HOME </a></li>
                     <li> <a href="admin.php"> PRODUCT </a></li>
                     <li> <a href="kelola.php"> KELOLA </a></li>
-                    <li> <a href="logout.php"> LOGOUT </a></li>
+                    <li> <a href="../../logout.php"> LOGOUT </a></li>
                     <li>
                         <label>
                             <input type="checkbox" class="checkbox" id="tombol">
