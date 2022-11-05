@@ -142,7 +142,8 @@ require 'koneksi.php';
             </footer>
 
         </div>
-        <script src="scriptidx.js"></script>
+    </div>
+    <script src="scriptidx.js"></script>
 </body>
 
 </html>
