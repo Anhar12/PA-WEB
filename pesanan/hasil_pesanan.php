@@ -1,35 +1,10 @@
 <?php
     session_start();
-    if ($_SESSION["priv"] != "admin") {
+    if ($_SESSION["priv"] != "user") {
         header("Location: ../login.php");
     }
 
     require '../koneksi.php';
-
-    if (isset($_POST["tambah"])) {
-        $id = $_GET['id'];
-        $status = $_POST["status"];
-
-        $sql = "UPDATE pesanan SET `status` = '$status' WHERE id_pesanan = '$id'";
-
-        $result = mysqli_query($conn, $sql);
-
-        if ( $result ) {
-            echo"
-                <script>
-                    alert('Data berhasil diubah');
-                    document.location.href = '../pengguna/admin/kelola-pesanan.php';
-                </script>
-            ";
-        }else{
-            echo"
-                <script>
-                    alert('Data gagal diubah');
-                    document.location.href = '../pengguna/admin/kelola-pesanan.php';
-                </script>
-            ";
-        }
-    }
 ?>
 
 <!DOCTYPE html>
@@ -67,10 +42,10 @@
     <!-- main content -->
         <div class="form">
             <form method="post" action="">
-                <h2>Form Update Data Pesanan</h2>
+                <h2>Form Hasil Pesanan</h2>
                 <div class="order-detail">
                     <?php 
-                        $id = $_GET['id'];
+                        $id = $_SESSION["id_pesanan"];
                         $result = mysqli_query( $conn, "SELECT * FROM pesanan
                                                 INNER JOIN user ON pesanan.id_user = user.id
                                                 INNER JOIN produk ON pesanan.id_produk = produk.id
@@ -103,7 +78,7 @@
                         <input name="total" type="text" value="Rp. <?php echo $pesan['total_harga'] ?>" readonly>
                     </div>
                     <div class="input">
-                        <span class="detail"> Alamat </span>
+                        <span class="detail"> Alamat Lengkap </span>
                         <input name="alamat" type="text" value="<?php echo $pesan['alamat'] ?>" readonly>
                     </div>
                     <div class="input">
@@ -116,18 +91,10 @@
                     </div>
                     <div class="input">
                         <span class="detail">Status </span>
-                        <select name="status" id="">
-                            <option value="">-</option>
-                            <option value="menunggu">Menunggu</option>
-                            <option value="berhasil">Berhasil</option>
-                            <option value="gagal">Gagal</option>
-                        </select>
-                    </div>
-                    <div class="submitButton">
-                        <input type="submit" value="Submit" name="tambah">
+                        <input name="atas_nama" type="text" value="<?php echo strtoupper($pesan['status']) ?>" readonly>
                     </div>
                     <div class="kelola">
-                        <button><a href="../pengguna/admin/kelola-pesanan.php">Kembali</a> </button>
+                        <button><a href="pesanan_user.php">Kembali</a> </button>
                     </div>
                 </div>
             </form>
@@ -154,6 +121,6 @@
         </footer>
     </div>
         
-    <script src="scriptorder.js"></script>
+    <script src="../scriptorder.js"></script>
 </body>
 </html>

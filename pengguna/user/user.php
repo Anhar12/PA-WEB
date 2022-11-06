@@ -1,9 +1,17 @@
 <?php 
     session_start();
     require '../../koneksi.php';
-    // if ($_SESSION["priv"] != "user") {
-    //     header("Location: ../../login.php");
-    // }
+    if ($_SESSION["priv"] != "user") {
+        header("Location: ../../login.php");
+    }
+    $username = $_SESSION["username"];
+    $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+    $data = [];
+    while ($row = mysqli_fetch_array($result)) {
+        $data[] = $row;
+    }
+    foreach ($data as $user);
+    $id = $user["id"];
 ?>
 
 <!DOCTYPE html>
@@ -25,10 +33,10 @@
             <a href="index.php" id="logo"> Anhar <font color="#f86909"> Ztore </font> </a>
             <div class="navbar">
                 <ul>
-                    <li> <a href="user.php"> HOME </a></li>
-                    <li> <a href="#product"> PRODUCT </a></li>
-                    <li> <a href="../../pesanan/order_user.php"> ORDER </a></li>
-                    <li> <a href="aboutUser.php"> PROFILE </a></li>
+                    <li> <a href="" style="color: #FA022E;"> HOME </a></li>
+                    <li> <a href="../../produk/list_barang.php"> PRODUCT </a></li>
+                    <li> <a href="../../pesanan/pesanan_user.php"> ORDER </a></li>
+                    <li> <a href="profile.php?id=<?php echo $id; ?>"> PROFILE </a></li>
                     <li> <a href="../../logout.php"> LOGOUT </a></li>
                     <li>
                         <label>
@@ -67,9 +75,10 @@
                             echo "<img src='../../img/$row[gambar]' alt='Gambar Produk'>";
                             echo "<div class='deskripsi-produk'>";
                                 // tag a belum diatur ke halaman detail produk
-                                echo "<a href='#'><h4 class='judul'>$row[nama]</h4></h4></a>";
+                                echo "<a href='../../pesanan/tambah_pesanan_user.php?id=$row[id]'><h4>$row[nama]</h4></a>";
+                                // <a href="../pengguna/user/profile.php?id=<?php echo $id;
                                 echo "<p class='harga'>Rp $row[harga]</p>";
-                                echo "<a href='cek_login.php' class='btn-produk'>Beli Sekarang</a>";
+                                echo "<a href='../../cek_login.php?id=$row[id]' class='btn-produk'>Beli Sekarang</a>";
                             echo "</div>";
                         echo "</div>";
                     }

@@ -1,9 +1,9 @@
 <?php
-  if(!isset($_SESSION["priv"])){
-    header("location: login.php");
+  session_start();
+  if ($_SESSION["priv"] != "user") {
+    header("Location: login.php");
     return;
   }
-  else if($_SESSION["priv"] == "user"){
-    header("Location: pengguna/user/order.php");
-  }
+  $_SESSION["produk"] = $_GET["id"];
+  header("Location: pesanan/tambah_pesanan_user.php");
 ?>

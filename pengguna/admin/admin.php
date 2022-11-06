@@ -26,9 +26,8 @@
             <a href="index.php" id="logo"> Anhar <font color="#f86909"> Ztore </font> </a>
             <div class="navbar">
                 <ul>
-                    <li> <a href="admin.php"> HOME </a></li>
-                    <li> <a href="#product"> PRODUCT </a></li>
-                    <li> <a href="kelola.php"> KELOLA </a></li>
+                    <li> <a href="" style="color: #FA022E;"> HOME </a></li>
+                    <li> <a href="kelola.php"> DASHBOARD </a></li>
                     <li> <a href="../../logout.php"> LOGOUT </a></li>
                     <li>
                         <label>
@@ -68,7 +67,7 @@
                             echo "<div class='deskripsi-produk'>";
                                 echo "<h4 class='judul'>$row[nama]</h4>";
                                 echo "<p class='harga'>Rp $row[harga]</p>";
-                                echo "<a href='cek_login.php' class='btn-produk'>Beli Sekarang</a>";
+                                echo "<a href='../../cek_login.php' class='btn-produk'>Beli Sekarang</a>";
                             echo "</div>";
                         echo "</div>";
                     }

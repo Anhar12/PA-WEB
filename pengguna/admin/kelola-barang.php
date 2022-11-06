@@ -5,12 +5,6 @@
     }
 
     require "../../koneksi.php";
-
-    $result = mysqli_query($conn, "SELECT * FROM produk");
-    $barang = [];
-    while ($row = mysqli_fetch_assoc($result)) {
-        $barang[] = $row;
-    }
 ?>
 
 <!DOCTYPE html>
@@ -33,8 +27,7 @@
             <div class="navbar">
                 <ul>
                     <li> <a href="admin.php"> HOME </a></li>
-                    <li> <a href="admin.php"> PRODUCT </a></li>
-                    <li> <a href="kelola.php"> KELOLA </a></li>
+                    <li> <a href="" style="color: #FA022E;"> DASHBOARD </a></li>
                     <li> <a href="../../logout.php"> LOGOUT </a></li>
                     <li>
                         <label>
@@ -55,17 +48,25 @@
             </div>
             <table border="1">
                 <tr height="50px">
-                    <th width=""> No </th>
-                    <th width=""> Nama </th>
-                    <th width=""> Gambar </th>
-                    <th width=""> Stok </th>
-                    <th width=""> Harga </th>
-                    <th width=""> Kategori </th>
-                    <th width=""> Deskripsi </th>
-                    <th width=""> Waktu Ditambahkan </th>
-                    <th width="" colspan="2"> Kelola </th>
+                    <th> No </th>
+                    <th> Nama </th>
+                    <th> Gambar </th>
+                    <th> Stok </th>
+                    <th> Harga </th>
+                    <th> Kategori </th>
+                    <th> Deskripsi </th>
+                    <th> Waktu Ditambahkan </th>
+                    <th colspan="2"> Kelola </th>
                 </tr>
-                <?php $i = 1; foreach ($barang as $brg):?>
+                <?php 
+                    $result = mysqli_query($conn, "SELECT * FROM produk");
+                    $barang = [];
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $barang[] = $row;
+                    }
+                    $i = 1; 
+                    foreach ($barang as $brg):
+                ?>
                 <tr>
                     <td> <?php echo $i ;?> </td>
                     <td> <?php echo $brg['nama'] ;?> </td>
@@ -78,7 +79,10 @@
                     <td width="5%"> <a href="../../produk/editbrg.php?id=<?php echo $brg['id']; ?>" class="updt"> <i class="material-icons" style="font-size:26px;color:green">update</i> </td> </a>
                     <td width="5%"> <a href="../../produk/hapusbrg.php?id=<?php echo $brg['id']; ?>" class = "dlt"> <i class="material-icons" style="font-size:26px;color:red">delete</i> </a> </td>
                 </tr>
-                <?php $i++; endforeach;?>
+                <?php 
+                    $i++; 
+                    endforeach;
+                ?>
             </table>
         </div>
 

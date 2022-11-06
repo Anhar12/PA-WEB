@@ -1,10 +1,18 @@
 <?php
     session_start();
-    if ($_SESSION["priv"] != "admin") {
-        header("Location: ../../login.php");
+    if ($_SESSION["priv"] != "user") {
+        header("Location: ../login.php");
     }
     
-    require "../../koneksi.php";
+    require "../koneksi.php";
+    $username = $_SESSION["username"];
+    $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+    $data = [];
+    while ($row = mysqli_fetch_array($result)) {
+        $data[] = $row;
+    }
+    foreach ($data as $user);
+    $id = $user["id"];
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/AZ.ico">
     <title>AnharZtore</title>
-    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -23,12 +31,14 @@
     <!-- header -->
     <div class="atas">
         <nav>
-            <a href="index.html" id="logo"> Anhar <font color="#f86909"> Ztore </font> </a>
+            <a href="index.html" id="logo" style="color: #fa022e"> Anhar <font color="#f86909"> Ztore </font> </a>
             <div class="navbar">
                 <ul>
-                    <li> <a href="admin.php"> HOME </a></li>
-                    <li> <a href="" style="color: #FA022E;"> DASHBOARD </a></li>
-                    <li> <a href="../../logout.php"> LOGOUT </a></li>
+                    <li> <a href="../pengguna/user/user.php"> HOME </a></li>
+                    <li> <a href="../produk/list_barang.php"> PRODUCT </a></li>
+                    <li> <a href="" style="color: #FA022E;"> ORDER </a></li>
+                    <li> <a href="../pengguna/user/profile.php?id=<?php echo $id; ?>"> PROFILE </a></li>
+                    <li> <a href="../logout.php"> LOGOUT </a></li>
                     <li>
                         <label>
                             <input type="checkbox" class="checkbox" id="tombol">
@@ -41,9 +51,10 @@
 
         <!-- main content -->
         <div class="crud">
-            <h1> Kelola Data Pesanan AnharZtore </h1>
+            <h1> Daftar Pesanan Anda </h1>
             <div class="btn-kelola">
-                <button><a href="kelola.php">Kembali</a> </button>
+                <button><a href="../pengguna/user/user.php">Kembali</a> </button>
+                <button><a href="../produk/list_barang.php">Tambah</a> </button>
             </div>
             <table border="1">
                 <tr height="50px">
@@ -81,8 +92,8 @@
                     <td> <?php echo $pesan['atas_nama'] ;?> </td>
                     <td> <?php echo $pesan['keterangan_waktu'] ;?> </td>
                     <td> <?php echo strtoupper($pesan['status']) ;?> </td>
-                    <td width="4%"> <a href="../../pesanan/admin-edit-pesanan.php?id=<?php echo $pesan['id_pesanan']; ?>" class="updt"> <i class="material-icons" style="font-size:26px;color:green">update</i> </td> </a>
-                    <td width="4%"> <a href="../../pesanan/hapus.php?id=<?php echo $pesan['id_pesanan']; ?>" class = "dlt"> <i class="material-icons" style="font-size:26px;color:red">delete</i> </a> </td>
+                    <td width="4%"> <a href="../pesanan/edit_pesanan_user.php?id=<?php echo $pesan['id_pesanan']; ?>" class="updt"> <i class="material-icons" style="font-size:26px;color:green">update</i> </td> </a>
+                    <td width="4%"> <a href="../pesanan/hapus.php?id=<?php echo $pesan['id_pesanan']; ?>" class = "dlt"> <i class="material-icons" style="font-size:26px;color:red">delete</i> </a> </td>
                 </tr>
                 <?php 
                     $i++; 

@@ -24,7 +24,7 @@ require 'koneksi.php';
             <a href="index.php" id="logo"> Anhar <font color="#f86909"> Ztore </font> </a>
             <div class="navbar">
                 <ul>
-                    <li> <a href="index.php"> HOME </a></li>
+                    <li> <a href=""> HOME </a></li>
                     <li> <a href="#product"> PRODUCT </a></li>
                     <li> <a href="about.php"> ABOUT </a></li>
                     <li> <a href="login.php"> LOGIN </a></li>

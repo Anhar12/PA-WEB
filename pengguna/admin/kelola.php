@@ -25,8 +25,7 @@
             <div class="navbar">
                 <ul>
                     <li> <a href="admin.php"> HOME </a></li>
-                    <li> <a href="admin.php"> PRODUCT </a></li>
-                    <li> <a href="kelola.php"> KELOLA </a></li>
+                    <li> <a href="" style="color: #FA022E;"> DASHBOARD </a></li>
                     <li> <a href="../../logout.php"> LOGOUT </a></li>
                     <li>
                         <label>

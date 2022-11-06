@@ -33,9 +33,6 @@
                         <label>Password</label>
                     </div>
                     <input type="submit" value="LOGIN" class="submit" name="submit">
-                    <!-- <div class="guess">
-                        <a href="index.php"> Masuk Sebagai Tamu </a>
-                    </div> -->
                     <div class="guess">
                         Tidak Punya Akun? <a href="regis.php"> Register </a>
                     </div>
@@ -66,7 +63,8 @@
                     } 
                     if ($row['role'] == 'user') {
                         $_SESSION["priv"] = "user";
-                        $_SESSION["akun"] = $username;
+                        $_SESSION["username"] = $username;
+                        $_SESSION["password"] = $password;
                         header("Location: pengguna/user/user.php");
                         exit;
                     }
@@ -75,6 +73,11 @@
                         alert('username atau password salah');
                     </script>";
                 }
+            }
+            else {
+                echo "<script>
+                    alert('username atau password salah');
+                </script>";
             }
         }
     ?> 

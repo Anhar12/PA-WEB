@@ -6,15 +6,8 @@
 
     require '../koneksi.php';
 
-    $id = $_GET['id'];
-
-    $result = mysqli_query($conn, "SELECT * FROM produk WHERE id = '$id'");
-    $barang = [];
-    while ($row = mysqli_fetch_assoc($result)) {
-        $barang[] = $row;
-    }
-
     if (isset($_POST["ubah"])) {
+        $id = $_GET['id'];
         date_default_timezone_set("asia/kuala_lumpur");
         $nama = $_POST["nama"];
         $harga = $_POST["harga"];
@@ -54,7 +47,6 @@
             }
         }
     }
-
 ?>
 
 <!DOCTYPE html>
@@ -94,7 +86,16 @@
             <form method="post" action="" enctype="multipart/form-data">
                 <h2>Form Edit Data Barang</h2>
                 <div class="order-detail">
-                    <?php $i = 1; foreach ($barang as $brg);?>
+                    <?php 
+                        $id = $_GET['id'];
+                        $result = mysqli_query($conn, "SELECT * FROM produk WHERE id = '$id'");
+                        $barang = [];
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $barang[] = $row;
+                        }
+                        $i = 1; 
+                        foreach ($barang as $brg);
+                    ?>
                     <div class="input">
                         <span class="detail">Nama</span>
                         <input name="nama" type="text" value="<?php echo $brg['nama']?>" required>
