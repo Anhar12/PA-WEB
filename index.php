@@ -47,7 +47,7 @@ require 'koneksi.php';
         </div>
     </div>
 
-    <div class="bawahHome" id="product">
+    <div class="bawah" id="product">
         <div class="container"  style="margin-top:50px;">
             <h1> Best Seller Dari AnharZtore </h1>
             <p class="best-seller"> Berbagai macam produk smarthphone dengan berbagai variasi harga yang pastinya murah meriah, aman di kantong, dan pastinya amanah, serta istiqomah </p>
