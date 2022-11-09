@@ -25,7 +25,7 @@ require 'koneksi.php';
             <div class="navbar">
                 <ul>
                     <li> <a href="" style="color: #FA022E;"> HOME </a></li>
-                    <li> <a href="#product"> PRODUCT </a></li>
+                    <li> <a href="produk/list_barang.php"> PRODUCT </a></li>
                     <li> <a href="about.php"> ABOUT </a></li>
                     <li> <a href="login.php"> LOGIN </a></li>
                     <li></li>
