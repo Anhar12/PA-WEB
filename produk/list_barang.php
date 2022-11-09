@@ -1,17 +1,16 @@
 <?php
 session_start();
 require '../koneksi.php';
-if ($_SESSION["priv"] != "user") {
-  header("Location: ../login.php");
+if (isset($_SESSION["username"])){
+    $username = $_SESSION["username"];
+    $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+    $data = [];
+    while ($row = mysqli_fetch_array($result)) {
+      $data[] = $row;
+    }
+    foreach ($data as $user);
+    $id = $user["id_user"];
 }
-$username = $_SESSION["username"];
-$result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
-$data = [];
-while ($row = mysqli_fetch_array($result)) {
-  $data[] = $row;
-}
-foreach ($data as $user);
-$id = $user["id_user"];
 ?>
 
 <!DOCTYPE html>
@@ -35,11 +34,21 @@ $id = $user["id_user"];
       <a href="index.php" id="logo"> Anhar <font color="#f86909"> Ztore </font> </a>
       <div class="navbar">
         <ul>
-          <li> <a href="../pengguna/user/user.php"> HOME </a></li>
-          <li> <a href="" style="color: #FA022E;"> PRODUCT </a></li>
-          <li> <a href="../pesanan/pesanan_user.php"> ORDER </a></li>
-          <li> <a href="../pengguna/user/profile.php?id=<?php echo $id; ?>"> PROFILE </a></li>
-          <li> <a href="../logout.php"> LOGOUT </a></li>
+          <?php 
+              if (isset($_SESSION["username"])){
+                echo "<li> <a href='../pengguna/user/user.php'> HOME </a></li>";
+                echo "<li> <a href='' style='color: #FA022E;'> PRODUCT </a></li>";
+                echo "<li> <a href='../pesanan/pesanan_user.php'> ORDER </a></li>";
+                echo "<li> <a href='../pengguna/user/profile.php?id=<?php echo $id; ?>'> PROFILE </a></li>";
+                echo "<li> <a href='../logout.php'> LOGOUT </a></li>";
+              }
+              else {
+                echo "<li> <a href='../index.php'> HOME </a></li>";
+                echo "<li> <a href='' style='color: #FA022E;'> PRODUCT </a></li>";
+                echo "<li> <a href='../about.php'> ABOUT </a></li>";
+                echo "<li> <a href='../login.php'> LOGIN </a></li>";
+              }
+          ?>
           <li>
             <label>
               <input type="checkbox" class="checkbox" id="tombol">
