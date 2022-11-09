@@ -73,7 +73,8 @@
                 <?php 
                     $result = mysqli_query( $conn, "SELECT * FROM pesanan 
                                         INNER JOIN user ON pesanan.id_user = user.id_user
-                                        INNER JOIN produk ON pesanan.id_produk = produk.id_produk");
+                                        INNER JOIN produk ON pesanan.id_produk = produk.id_produk
+                                        WHERE pesanan.id_user = '$id'");
                     $pesanan = [];
                     while ($row = mysqli_fetch_assoc($result)) {
                         $pesanan[] = $row;
