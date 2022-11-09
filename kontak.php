@@ -2,7 +2,7 @@
 session_start();
 require 'koneksi.php';
 if ($_SESSION["priv"] != "admin" and $_SESSION["priv"] != "user"){
-    header("Location: detail-produk-guest.php?id=$_GET[id]");
+    header("Location: index.php?id=$_GET[id]");
     return;
 }
 ?>
@@ -85,28 +85,21 @@ if ($_SESSION["priv"] != "admin" and $_SESSION["priv"] != "user"){
             <div class="navbar">
                 <ul>
                 <?php 
-                    if ($_SESSION["priv"] == "user"){
-                        $username = $_SESSION["username"];
-                        $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
-                        $data = [];
-                        while ($row = mysqli_fetch_array($result)) {
-                            $data[] = $row;
-                        }
-                        foreach ($data as $user);
-                        $id = $user["id_user"];
-                        echo "<li> <a href='pengguna/user/user.php'> HOME </a></li>";
-                        echo "<li> <a href='produk/list_barang.php' style='color: #FA022E;'> PRODUCT </a></li>";
-                        echo "<li> <a href='pesanan/pesanan_user.php'> ORDER </a></li>";
-                        echo "<li> <a href='kontak.php; ?>'> KONTAK </a></li>";
-                        echo "<li> <a href='pengguna/user/profile.php; ?>'> PROFILE </a></li>";
-                        echo "<li> <a href='logout.php'> LOGOUT </a></li>";
+                    $username = $_SESSION["username"];
+                    $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+                    $data = [];
+                    while ($row = mysqli_fetch_array($result)) {
+                        $data[] = $row;
                     }
-                    else {
-                        echo "<li> <a href='pengguna/admin/admin.php'> HOME </a></li>";
-                        echo "<li> <a href='produk/admin_list_barang.php' style='color: #fa022e;'> PRODUCT </a></li>";
-                        echo "<li> <a href='pengguna/admin/kelola.php'> DASHBOARD </a></li>";
-                        echo "<li> <a href='logout.php'> LOGOUT </a></li>";
-                    }
+                    foreach ($data as $user);
+                    $id = $user["id_user"];
+                    echo "<li> <a href='pengguna/user/user.php'> HOME </a></li>";
+                    echo "<li> <a href='produk/list_barang.php' style='color: #FA022E;'> PRODUCT </a></li>";
+                    echo "<li> <a href='pesanan/pesanan_user.php'> ORDER </a></li>";
+                    echo "<li> <a href='kontak.php; ?>'> KONTAK </a></li>";
+                    echo "<li> <a href='pengguna/user/profile.php; ?>'> PROFILE </a></li>";
+                    echo "<li> <a href='logout.php'> LOGOUT </a></li>";
+
                 ?>  
                     <li>
                         <label>
@@ -139,6 +132,23 @@ if ($_SESSION["priv"] != "admin" and $_SESSION["priv"] != "user"){
           </div>
 
         </section>
+<?php
+
+if(isset($_POST['send'])){
+
+   $nama = $_POST['name'];
+   $nama = filter_var($nama, FILTER_SANITIZE_STRING);
+   $email = $_POST['email'];
+   $email = filter_var($email, FILTER_SANITIZE_STRING);
+   $saran = $_POST['msg'];
+   $saran = filter_var($saran, FILTER_SANITIZE_STRING);
+
+   $result = mysqli_query($conn, "INSERT INTO `saran` VALUES('','$id','$nama','$email','$saran')");
+
+
+}
+
+?>
 <!-- formulir kontak -->
             <!-- footer -->
             <footer>
