@@ -1,7 +1,6 @@
 <?php 
     session_start();
     require "koneksi.php";
-
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +46,7 @@
 
     <?php
         if (isset($_POST['submit'])) {
-            $username = $_POST["username"];
+            $username = strtolower($_POST["username"]);
             $password = $_POST["password"];
 
             $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
