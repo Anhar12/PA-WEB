@@ -13,10 +13,10 @@
         $data[] = $row;
     }
     foreach ($data as $user);
-    $id_user = $user["id"];
+    $id_user = $user["id_user"];
 
     $id_produk = $_SESSION["produk"];
-    $result = mysqli_query( $conn, "SELECT * FROM produk WHERE id = '$id_produk'");
+    $result = mysqli_query( $conn, "SELECT * FROM produk WHERE id_produk = '$id_produk'");
     $data_produk = [];
     while ($row = mysqli_fetch_array($result)) {
         $data_produk[] = $row;
@@ -36,8 +36,8 @@
     if (isset($_POST["tambah"])) {
         date_default_timezone_set("asia/kuala_lumpur");
         $id_pesanan = $_SESSION["id_pesanan"];
-        $id_user = $user["id"];
-        $id_produk = $produk["id"];
+        $id_user = $user["id_user"];
+        $id_produk = $produk["id_produk"];
         $metode_pembayaran = $_POST["metode_pembayaran"];
         $jumlah = $jumlah;
         $total_harga = $_POST["total"];
@@ -93,9 +93,10 @@
             <a href="index.html" id="logo"> Anhar <font color="#f86909"> Ztore </font> </a>
             <div class="navbar">
                 <ul>
-                    <li> <a href="../pengguna/admin/admin.php"> HOME </a></li>
-                    <li> <a href="../pengguna/admin/admin.php"> PRODUCT </a></li>
-                    <li> <a href='../pengguna/admin/kelola.php'> KELOLA </a></li>
+                    <li> <a href="../pengguna/user/user.php"> HOME </a></li>
+                    <li> <a href="../produk/list_barang.php"> PRODUCT </a></li>
+                    <li> <a href='pesanan_user.php' style="color: #fa022e;"> ORDER </a></li>
+                    <li> <a href='../pengguna/user/profile.php?id=<?php echo $id_user; ?>'> PROFILE </a></li>
                     <li> <a href="../logout.php"> LOGOUT </a></li>
                     <li>
                         <label>
@@ -114,7 +115,7 @@
                 <div class="order-detail">
                     <div class="input">
                         <span class="detail"> Total Harga </span>
-                        <input name="total" type="number" value="<?php echo $total ?>" min="0" readonly
+                        <input name="total" type="text" value="Rp <?php echo number_format($total, 0, '.', '.') ?>" min="0" readonly
                                 style="
                                     box-shadow: 0px 0px 5px 0px rgb(255, 172, 254);
                                     border-color: rgb(198, 72, 37);">
@@ -153,7 +154,7 @@
                         <input type="submit" value="Submit" name="tambah">
                     </div>
                     <div class="kelola">
-                        <button><a href="tambah_pesanan_user.php">Kembali</a> </button>
+                        <button><a href="edit_pesanan_user.php?id=<?php echo $pesanan['id_pesanan']; ?>">Kembali</a> </button>
                     </div>
                 </div>
             </form>

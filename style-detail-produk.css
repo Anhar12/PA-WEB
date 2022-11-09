@@ -27,22 +27,29 @@ html, body{
     margin: 0 auto;
 }
 .product-div{
-    margin: 1rem 0;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
     padding: 2rem 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     background-color: #fff;
-    border-radius: 3px;
+    border-radius: 15px;
     column-gap: 10px;
+    align-items: center;
 }
 .product-div-left{
     padding: 20px;
 }
 .product-div-right{
     padding: 20px;
+    padding-right: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
 }
 .img-container img{
-    width: 200px;
+    width: 250px;
     margin: 0 auto;
 }
 .active{
@@ -67,41 +74,40 @@ html, body{
 .product-kategori{
     display: flex;
     align-items: center;
-    margin-top: 12px;
+    margin-top: 20px;
 }
-.product-kategori span{
-    margin-right: 6px;
+.product-stock{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
 }
 .product-description{
-    font-weight: 18px;
-    line-height: 1.6;
-    font-weight: 300;
-    opacity: 0.9;
-    margin-top: 22px;
+    line-height: 1.5;
+    font-weight: 500;
+    opacity: 1;
+    margin: 10px 0 15px 0;
+    display: flex;
+    justify-content: left;
+    padding: 8px 0;
 }
-.btn-groups{
-    margin-top: 22px;
-}
-.btn-groups button{
-    display: inline-block;
-    font-size: 16px;
-    font-family: inherit;
-    text-transform: uppercase;
-    padding: 15px 16px;
-    color: #fff;
+.product-div-right .btn-produk {
     cursor: pointer;
-    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    color: #eeeeee;
+    background: #212529;
+    text-align: center;
 }
-.btn-groups button .fas{
-    margin-right: 8px;
-}
-.buy-now-btn{
-    background-color: #000;
-    border: 2px solid #000;
-}
-.buy-now-btn:hover{
-    background-color: #fff;
-    color: #000;
+
+.product-div-right .btn-produk:hover {
+    color: #dc3545;
+    background: #d3ece9;
+    border: 1px solid #dc3545;
 }
 
 @media screen and (max-width: 992px){

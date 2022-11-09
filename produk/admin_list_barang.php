@@ -1,17 +1,9 @@
 <?php
 session_start();
 require '../koneksi.php';
-if ($_SESSION["priv"] != "user") {
+if ($_SESSION["priv"] != "admin") {
   header("Location: ../login.php");
 }
-$username = $_SESSION["username"];
-$result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
-$data = [];
-while ($row = mysqli_fetch_array($result)) {
-  $data[] = $row;
-}
-foreach ($data as $user);
-$id = $user["id_user"];
 ?>
 
 <!DOCTYPE html>
@@ -35,10 +27,9 @@ $id = $user["id_user"];
       <a href="index.php" id="logo"> Anhar <font color="#f86909"> Ztore </font> </a>
       <div class="navbar">
         <ul>
-          <li> <a href="../pengguna/user/user.php"> HOME </a></li>
-          <li> <a href="" style="color: #FA022E;"> PRODUCT </a></li>
-          <li> <a href="../pesanan/pesanan_user.php"> ORDER </a></li>
-          <li> <a href="../pengguna/user/profile.php?id=<?php echo $id; ?>"> PROFILE </a></li>
+          <li> <a href="../pengguna/admin/admin.php"> HOME </a></li>
+          <li> <a href="" style="color: #fa022e;"> PRODUCT </a></li>
+          <li> <a href="../pengguna/admin/kelola.php"> DASHBOARD </a></li>
           <li> <a href="../logout.php"> LOGOUT </a></li>
           <li>
             <label>
@@ -78,6 +69,7 @@ $id = $user["id_user"];
           echo "<div  class='produk' 
                       style='
                           background: rgba(255, 255, 255, 0.25);'>";
+          // echo "<a href='../detail-produk.php?id=$row[id_produk]'><img src='../img/Nothing Phone 1.png' alt='Gambar Produk'></a>";
           echo "<a href='../detail-produk.php?id=$row[id_produk]'><img src='../img/$row[gambar]' alt='Gambar Produk'></a>";
           echo "<div  class='deskripsi-produk' 
                       style='

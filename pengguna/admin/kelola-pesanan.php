@@ -27,7 +27,8 @@
             <div class="navbar">
                 <ul>
                     <li> <a href="admin.php"> HOME </a></li>
-                    <li> <a href="" style="color: #FA022E;"> DASHBOARD </a></li>
+                    <li> <a href="../../produk/admin_list_barang.php"> PRODUCT </a></li>
+                    <li> <a href="kelola.php" style="color: #fa022e;"> DASHBOARD </a></li>
                     <li> <a href="../../logout.php"> LOGOUT </a></li>
                     <li>
                         <label>
@@ -42,15 +43,21 @@
         <!-- main content -->
         <div class="crud">
             <h1> Kelola Data Pesanan AnharZtore </h1>
-            <div class="btn-kelola">
-                <button><a href="kelola.php">Kembali</a> </button>
-            </div>
+            <form action="" class="search_barang" method="GET">
+                <div class="btn-kelola">
+                    <button> <a href="kelola.php">Kembali</a> </button>
+                </div>
+                <div class="search" style="width: 45%;">
+                    <input type="text" placeholder="Cari data yang anda inginkan" maxlength="50" class="anu_search" name="cari" style="color: #ffffff;">
+                    <button type="submit" name="search" class="searching">Search</button>
+                </div>
+            </form>
             <table border="1">
                 <tr height="50px">
                     <th> No. </th>
                     <th> Nama </th>
                     <th> No. Telp </th>
-                    <th> Merk HP </th>
+                    <th> Nama HP </th>
                     <th> Jumlah </th>
                     <th> Alamat </th>
                     <th> Pembayaran </th>
@@ -60,9 +67,27 @@
                     <th colspan="2"> Kelola </th>
                 </tr>
                 <?php 
-                    $result = mysqli_query( $conn, "SELECT * FROM pesanan 
-                                        INNER JOIN user ON pesanan.id_user = user.id
-                                        INNER JOIN produk ON pesanan.id_produk = produk.id");
+                    if (isset($_GET["search"])) {
+                        $keyword = $_GET["cari"];
+                        $result =   mysqli_query( 
+                                    $conn, "SELECT * FROM pesanan 
+                                            INNER JOIN user ON pesanan.id_user = user.id_user
+                                            INNER JOIN produk ON pesanan.id_produk = produk.id_produk
+                                            WHERE   user.username LIKE '%$keyword%' OR
+                                                    user.no_hp LIKE '%$keyword%' OR
+                                                    produk.nama LIKE '%$keyword%' OR
+                                                    jumlah LIKE '%$keyword%' OR
+                                                    user.alamat LIKE '%$keyword%' OR
+                                                    metode_pembayaran LIKE '%$keyword%' OR
+                                                    atas_nama LIKE '%$keyword%' OR
+                                                    `status` LIKE '%$keyword%'");
+                    }
+                    else {
+                        $result = mysqli_query( 
+                                    $conn, "SELECT * FROM pesanan 
+                                            INNER JOIN user ON pesanan.id_user = user.id_user
+                                            INNER JOIN produk ON pesanan.id_produk = produk.id_produk");
+                    }
                     $pesanan = [];
                     while ($row = mysqli_fetch_assoc($result)) {
                         $pesanan[] = $row;
@@ -72,7 +97,7 @@
                 ?>
                 <tr>
                     <td> <?php echo $i ;?> </td>
-                    <td> <?php echo $pesan['username'] ;?> </td>
+                    <td> <?php echo ucwords($pesan['username']) ;?> </td>
                     <td> <?php echo $pesan['no_hp'] ;?> </td>
                     <td> <?php echo $pesan['nama'] ;?> </td>
                     <td> <?php echo $pesan['jumlah'] ;?> </td>
@@ -80,7 +105,7 @@
                     <td> <?php echo $pesan['metode_pembayaran'] ;?> </td>
                     <td> <?php echo $pesan['atas_nama'] ;?> </td>
                     <td> <?php echo $pesan['keterangan_waktu'] ;?> </td>
-                    <td> <?php echo strtoupper($pesan['status']) ;?> </td>
+                    <td> <?php echo ucwords($pesan['status']) ;?> </td>
                     <td width="4%"> <a href="../../pesanan/admin-edit-pesanan.php?id=<?php echo $pesan['id_pesanan']; ?>" class="updt"> <i class="material-icons" style="font-size:26px;color:green">update</i> </td> </a>
                     <td width="4%"> <a href="../../pesanan/hapus.php?id=<?php echo $pesan['id_pesanan']; ?>" class = "dlt"> <i class="material-icons" style="font-size:26px;color:red">delete</i> </a> </td>
                 </tr>

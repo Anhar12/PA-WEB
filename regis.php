@@ -16,9 +16,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="atas">
+    <div class="atas" style="height: 130vh;">
         <a href="#" id="logo"> Anhar <font color="#f86909"> Ztore </font> </a>
-        <div class="login"> 
+        <div class="login" style="margin-top: 100px"> 
             <div class="title">
                 <h1> REGISTRASI </h1>
                 <form action="" class="formLogin" method="post">
@@ -43,7 +43,7 @@
                         <label>Email</label>
                     </div>
                     <div class="input">
-                        <input class="text" type="number" maxlength="50" name="no_hp" required>
+                        <input class="text" type="text" maxlength="50" name="no_hp" required>
                         <span></span>
                         <label>Nomor Hp</label>
                     </div>

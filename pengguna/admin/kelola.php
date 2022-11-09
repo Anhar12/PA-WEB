@@ -25,7 +25,8 @@
             <div class="navbar">
                 <ul>
                     <li> <a href="admin.php"> HOME </a></li>
-                    <li> <a href="" style="color: #FA022E;"> DASHBOARD </a></li>
+                    <li> <a href="../../produk/admin_list_barang.php"> PRODUCT </a></li>
+                    <li> <a href="" style="color: #fa022e;"> DASHBOARD </a></li>
                     <li> <a href="../../logout.php"> LOGOUT </a></li>
                     <li>
                         <label>
@@ -68,6 +69,6 @@
         </footer>
     </div>
     
-    <script src="scriptabout.js"></script>
+    <script src="../../scriptabout.js"></script>
 </body>
 </html>

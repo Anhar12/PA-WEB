@@ -12,6 +12,7 @@ require 'koneksi.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/AZ.png">
     <title>AnharZtore</title>
+    <link rel="stylesheet" href="style-detail-produk.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -24,8 +25,8 @@ require 'koneksi.php';
             <a href="index.php" id="logo"> Anhar <font color="#f86909"> Ztore </font> </a>
             <div class="navbar">
                 <ul>
-                    <li> <a href="" style="color: #FA022E;"> HOME </a></li>
-                    <li> <a href="#product"> PRODUCT </a></li>
+                    <li> <a href="index.php"> HOME </a></li>
+                    <li> <a href="index.php" style="color: #FA022E;"> PRODUCT </a></li>
                     <li> <a href="about.php"> ABOUT </a></li>
                     <li> <a href="login.php"> LOGIN </a></li>
                     <li>
@@ -39,35 +40,41 @@ require 'koneksi.php';
         </nav>
 
         <!-- main content -->
-        <div class="deskripsi">
-            <h1> AnharZtore SmartPhone </h1>
-            <p> Smartphone store terbaik di Samarinda, dapat memberikan layanan terbaik mulai dari penjualan yang murah meriah, aman di kantong, serta amanah dan istiqomah </p>
-            <p> Ayo! Tunggu apalagi, segera belanja di AnharZtore! </p>
+        <?php
+        $id = $_GET['id'];
+
+        $result = mysqli_query($conn, "SELECT * FROM produk WHERE id_produk = $id");
+        
+        $data_produk = [];
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            $data_produk[] = $row;
+        }
+        foreach ($data_produk as $produk)
+
+        ?>
+    <!-- <div class = "main-wrapper"> -->
+        <div class = "container">
+            <div class = "product-div">
+                <div class = "product-div-left">
+                    <div class = "img-container">
+                        <img src = "img/<?php echo $produk['gambar'];?>" alt = "HP">
+                    </div>
+                </div>
+                <div class = "product-div-right">
+                    <span class = "product-name"><?php echo $produk['nama'];?></span>
+                    <span class = "product-price" style="color: #FA022E;">Rp <?php echo number_format($produk['harga'],0,'.','.');?></span>
+                    <span class = "product-kategori">Kategori :  <?php echo $produk['kategori'];?></span>
+                    <span class = "product-stock">Stock :  <?php echo $produk['stock'];?></span>
+                    <span class = "product-description">Deskripsi : <?php echo $produk['deskripsi'];?></span>
+                    <a href="cek_login.php?id=<?php echo $produk['id_produk'] ?>" class="btn-produk">Beli Sekarang</a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="bawahHome" id="product">
-        <div class="container"  style="margin-top:50px;">
-            <h1> Best Seller Dari AnharZtore </h1>
-            <p class="best-seller"> Berbagai macam produk smarthphone dengan berbagai variasi harga yang pastinya murah meriah, aman di kantong, dan pastinya amanah, serta istiqomah </p>
-            <div class="box-produk">
-                <?php
-                    $result = mysqli_query($conn, "SELECT * FROM produk LIMIT 5");
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<div class='produk'>";
-                            echo "<a href='detail-produk.php?id=$row[id_produk]'><img src='img/$row[gambar]' alt='Gambar Produk'></a>";
-                            echo "<div class='deskripsi-produk'>";
-                            echo "<a href='detail-produk.php?id=$row[id_produk]'><h4>$row[nama]</h4></a>";
-                            echo "<p class='harga'>Rp $row[harga]</p>";
-                            echo "<a href='cek_login.php?id=$row[id_produk]' class='btn-produk'>Beli Sekarang</a>";
-                            echo "</div>";
-                        echo "</div>";
-                    }
-                ?>
-            </div>
-
             <!-- review -->
-            <div class="review" style="margin-top:50px;">
+            <div class="review">
                 <h1> Review Dari Para Customer Kami </h1>
                 <div class="baris">
                     <div class="kolomReview">

@@ -12,7 +12,7 @@
         $data[] = $row;
     }
     foreach ($data as $user);
-    $id = $user["id"];
+    $id = $user["id_user"];
 ?>
 
 <!DOCTYPE html>
@@ -31,12 +31,12 @@
     <!-- header -->
     <div class="atas">
         <nav>
-            <a href="index.html" id="logo" style="color: #fa022e"> Anhar <font color="#f86909"> Ztore </font> </a>
+            <a href="index.html" id="logo"> Anhar <font color="#f86909"> Ztore </font> </a>
             <div class="navbar">
                 <ul>
                     <li> <a href="../pengguna/user/user.php"> HOME </a></li>
                     <li> <a href="../produk/list_barang.php"> PRODUCT </a></li>
-                    <li> <a href="" style="color: #FA022E;"> ORDER </a></li>
+                    <li> <a href="" style="color: #fa022e;"> ORDER </a></li>
                     <li> <a href="../pengguna/user/profile.php?id=<?php echo $id; ?>"> PROFILE </a></li>
                     <li> <a href="../logout.php"> LOGOUT </a></li>
                     <li>
@@ -61,7 +61,7 @@
                     <th> No. </th>
                     <th> Nama </th>
                     <th> No. Telp </th>
-                    <th> Merk HP </th>
+                    <th> Nama HP </th>
                     <th> Jumlah </th>
                     <th> Alamat </th>
                     <th> Pembayaran </th>
@@ -72,8 +72,8 @@
                 </tr>
                 <?php 
                     $result = mysqli_query( $conn, "SELECT * FROM pesanan 
-                                        INNER JOIN user ON pesanan.id_user = user.id
-                                        INNER JOIN produk ON pesanan.id_produk = produk.id");
+                                        INNER JOIN user ON pesanan.id_user = user.id_user
+                                        INNER JOIN produk ON pesanan.id_produk = produk.id_produk");
                     $pesanan = [];
                     while ($row = mysqli_fetch_assoc($result)) {
                         $pesanan[] = $row;
@@ -83,7 +83,7 @@
                 ?>
                 <tr>
                     <td> <?php echo $i ;?> </td>
-                    <td> <?php echo $pesan['username'] ;?> </td>
+                    <td> <?php echo ucwords($pesan['username']) ;?> </td>
                     <td> <?php echo $pesan['no_hp'] ;?> </td>
                     <td> <?php echo $pesan['nama'] ;?> </td>
                     <td> <?php echo $pesan['jumlah'] ;?> </td>
@@ -91,7 +91,7 @@
                     <td> <?php echo $pesan['metode_pembayaran'] ;?> </td>
                     <td> <?php echo $pesan['atas_nama'] ;?> </td>
                     <td> <?php echo $pesan['keterangan_waktu'] ;?> </td>
-                    <td> <?php echo strtoupper($pesan['status']) ;?> </td>
+                    <td> <?php echo ucwords($pesan['status']) ;?> </td>
                     <td width="4%"> <a href="../pesanan/edit_pesanan_user.php?id=<?php echo $pesan['id_pesanan']; ?>" class="updt"> <i class="material-icons" style="font-size:26px;color:green">update</i> </td> </a>
                     <td width="4%"> <a href="../pesanan/hapus.php?id=<?php echo $pesan['id_pesanan']; ?>" class = "dlt"> <i class="material-icons" style="font-size:26px;color:red">delete</i> </a> </td>
                 </tr>
@@ -124,6 +124,6 @@
         </footer>
     </div>
     
-    <script src="../../scriptabout.js"></script>
+    <script src="../scriptabout.js"></script>
 </body>
 </html>

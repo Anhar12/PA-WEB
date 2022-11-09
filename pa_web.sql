@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2022 at 12:06 PM
+-- Generation Time: Nov 09, 2022 at 01:21 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -44,7 +44,10 @@ CREATE TABLE `pesanan` (
 --
 
 INSERT INTO `pesanan` (`id_pesanan`, `id_user`, `id_produk`, `metode_pembayaran`, `jumlah`, `total_harga`, `keterangan_waktu`, `atas_nama`, `status`) VALUES
-(1, 2, 3, 'Bank Mandiri', 2, 2500000, '2022-11-05 04:45:47', 'Budi Bersaudara', 'berhasil');
+(6, 2, 4, 'Bank BNI', 4, 10000000, '2022-11-06 15:29:17', 'Bapak Budi', 'menunggu'),
+(8, 2, 5, 'Bank BCA', 4, 16000000, '2022-11-06 16:33:13', 'Ibu Budi', 'gagal'),
+(9, 2, 5, 'DANA', 1, 4000000, '2022-11-06 16:33:18', 'Kakak Budi', 'berhasil'),
+(11, 2, 2, 'GOPAY', 4, 14000000, '2022-11-07 13:18:43', 'Teman Budi', 'berhasil');
 
 -- --------------------------------------------------------
 
@@ -53,7 +56,7 @@ INSERT INTO `pesanan` (`id_pesanan`, `id_user`, `id_produk`, `metode_pembayaran`
 --
 
 CREATE TABLE `produk` (
-  `id` int(10) NOT NULL,
+  `id_produk` int(10) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `harga` int(10) NOT NULL,
   `kategori` varchar(50) NOT NULL,
@@ -67,11 +70,11 @@ CREATE TABLE `produk` (
 -- Dumping data for table `produk`
 --
 
-INSERT INTO `produk` (`id`, `nama`, `harga`, `kategori`, `deskripsi`, `stock`, `keterangan`, `gambar`) VALUES
-(1, 'Samsung Galaxy A71', 2000000, 'Tingkat Menengah', 'Baterai 4800 mAh', 10, '2022-11-04 17:39:58', 'Samsung Galaxy A71.png'),
-(2, 'Oppo Reno8 Pro', 3500000, 'Tingkat Menengah', 'Ram 8GB', 9, '2022-11-04 17:40:17', 'Oppo Reno8 Pro.png'),
+INSERT INTO `produk` (`id_produk`, `nama`, `harga`, `kategori`, `deskripsi`, `stock`, `keterangan`, `gambar`) VALUES
+(1, 'Samsung Galaxy A71', 3000000, 'Tingkat Menengah', '            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis explicabo sapiente, necessitatibus velit ipsum maiores sit veritatis nam, vel facere eaque fugiat neque quibusdam cumque iure, doloremque saepe temporibus. Vel!', 10, '2022-11-07 22:22:24', 'Samsung Galaxy A71.png'),
+(2, 'Oppo Reno8 Pro', 4000000, 'Tingkat Menengah', 'Layar OLED', 9, '2022-11-07 22:22:49', 'Oppo Reno8 Pro.png'),
 (3, 'Realme GT Neo 3T', 2500000, 'Tingkat Menengah', 'Ram 16GB', 9, '2022-11-04 17:40:26', 'Realme GT Neo 3T.png'),
-(4, 'Xiaomi Poco X4 Pro 5G', 3000000, 'Tingkat Menengah', 'Kamera 48 MP', 11, '2022-11-04 17:40:52', 'Xiaomi Poco X4 Pro 5G.png'),
+(4, 'Xiaomi Poco X4 Pro 5G', 3000000, 'Tingkat Menengah', 'Kamera 48 MP', 20, '2022-11-06 02:26:10', 'Xiaomi Poco X4 Pro 5G.png'),
 (5, 'Vivo V25 Pro Max', 4000000, 'Tingkat Menengah', 'Rom 128GB', 8, '2022-11-04 17:41:04', 'Vivo V25 Pro Max.png'),
 (6, 'iPhone 14 Pro Max', 5000000, 'Tingkat Menengah', 'Layar 7 inch', 15, '2022-11-04 17:41:14', 'iPhone 14 Pro Max.png');
 
@@ -96,12 +99,12 @@ CREATE TABLE `saran` (
 --
 
 CREATE TABLE `user` (
-  `id` int(10) NOT NULL,
+  `id_user` int(10) NOT NULL,
   `role` enum('admin','user') NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `no_hp` int(16) NOT NULL,
+  `no_hp` varchar(16) NOT NULL,
   `alamat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -109,9 +112,9 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `role`, `username`, `password`, `email`, `no_hp`, `alamat`) VALUES
-(1, 'admin', 'Admin', '$2y$10$bvdmErPmkZyz4FCAuahdP.UUF8WR7zMK.B0IuRJ.Xgli6zOvIJQpq', 'Admin@gmail.com', 2147483647, 'Jalan Balikpapan'),
-(2, 'user', 'Budi', '$2y$10$mNu6eIbduQ9WkfzWW6B86.Bws.fG5CA428rTcZ4DgK35Pc737hbc.', 'Budi@gmail.com', 2147483647, 'Jalan Samarinda');
+INSERT INTO `user` (`id_user`, `role`, `username`, `password`, `email`, `no_hp`, `alamat`) VALUES
+(1, 'admin', 'admin', '$2y$10$bvdmErPmkZyz4FCAuahdP.UUF8WR7zMK.B0IuRJ.Xgli6zOvIJQpq', 'Admin@gmail.com', '2147483647', 'Jalan Balikpapan'),
+(2, 'user', 'budi', '$2y$10$0lpd8SeSIhGJJb1XwMlau.X10ql0q5EyJ6EsV1WLUmEyAzWRB/jXu', 'Budi@gmail.com', '082993350768', 'Jalan Samarinda');
 
 --
 -- Indexes for dumped tables
@@ -127,7 +130,7 @@ ALTER TABLE `pesanan`
 -- Indexes for table `produk`
 --
 ALTER TABLE `produk`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_produk`);
 
 --
 -- Indexes for table `saran`
@@ -139,7 +142,7 @@ ALTER TABLE `saran`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_user`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -149,13 +152,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id_pesanan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pesanan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_produk` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `saran`
@@ -167,7 +170,7 @@ ALTER TABLE `saran`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

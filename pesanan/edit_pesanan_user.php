@@ -25,9 +25,9 @@
         $data[] = $row;
     }
     foreach ($data as $user);
-    $id_user = $user["id"];
+    $id_user = $user["id_user"];
 
-    $result = mysqli_query( $conn, "SELECT * FROM produk WHERE id = '$data_pesanan[id_produk]'");
+    $result = mysqli_query( $conn, "SELECT * FROM produk WHERE id_produk = '$data_pesanan[id_produk]'");
     $data_produk = [];
     while ($row = mysqli_fetch_array($result)) {
         $data_produk[] = $row;
@@ -59,9 +59,10 @@
             <a href="index.html" id="logo"> Anhar <font color="#f86909"> Ztore </font> </a>
             <div class="navbar">
                 <ul>
-                    <li> <a href="../pengguna/admin/admin.php"> HOME </a></li>
-                    <li> <a href="../pengguna/admin/admin.php"> PRODUCT </a></li>
-                    <li> <a href='../pengguna/admin/kelola.php'> KELOLA </a></li>
+                    <li> <a href="../pengguna/user/user.php"> HOME </a></li>
+                    <li> <a href="../produk/list_barang.php"> PRODUCT </a></li>
+                    <li> <a href='pesanan_user.php' style="color: #fa022e;"> ORDER </a></li>
+                    <li> <a href='../pengguna/user/profile.php?id=<?php echo $id_user; ?>'> PROFILE </a></li>
                     <li> <a href="../logout.php"> LOGOUT </a></li>
                     <li>
                         <label>
@@ -80,20 +81,20 @@
                 <div class="order-detail">
                     <div class="input">
                         <span class="detail"> Username </span>
-                        <input name="nama" type="text" value="<?php echo $user['username'] ?>" readonly 
+                        <input name="nama" type="text" value="<?php echo ucwords($user['username']) ?>" readonly 
                                 style="
                                     box-shadow: 0px 0px 5px 0px rgb(255, 172, 254);
                                     border-color: rgb(198, 72, 37);">
                     </div>
                     <div class="input">
                         <span class="detail"> Nomor HP </span>
-                        <input  name="no_hp" type="tel" value="<?php echo $user['no_hp'] ?>" readonly 
+                        <input  name="no_hp" type="text" value="<?php echo $user['no_hp'] ?>" readonly 
                                 style="
                                     box-shadow: 0px 0px 5px 0px rgb(255, 172, 254);
                                     border-color: rgb(198, 72, 37);">
                     </div>
                     <div class="input">
-                        <span class="detail"> Merk HP </span>
+                        <span class="detail"> Nama HP </span>
                         <input name="merk" type="text" value="<?php echo $produk['nama'] ?>" readonly
                                 style="
                                     box-shadow: 0px 0px 5px 0px rgb(255, 172, 254);

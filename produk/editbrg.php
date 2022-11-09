@@ -28,7 +28,7 @@
                     stock = '$stock', 
                     keterangan = '$waktu', 
                     gambar = '$gambarBaru' 
-                    WHERE id = '$id'";
+                    WHERE id_produk = '$id'";
             $result = mysqli_query($conn, $sql);
             if ( $result ) {
                 echo"
@@ -68,8 +68,8 @@
             <div class="navbar">
                 <ul>
                     <li> <a href="../pengguna/admin/admin.php"> HOME </a></li>
-                    <li> <a href="../pengguna/admin/admin.php"> PRODUCT </a></li>
-                    <li> <a href="../pengguna/admin/kelola.php"> KELOLA </a></li>
+                    <li> <a href="admin_list_barang.php"> PRODUCT </a></li>
+                    <li> <a href="../pengguna/admin/kelola.php" style="color: #fa022e"> DASHBOARD </a></li>
                     <li> <a href="../logout.php"> LOGOUT </a></li>
                     <li>
                         <label>
@@ -88,7 +88,7 @@
                 <div class="order-detail">
                     <?php 
                         $id = $_GET['id'];
-                        $result = mysqli_query($conn, "SELECT * FROM produk WHERE id = '$id'");
+                        $result = mysqli_query($conn, "SELECT * FROM produk WHERE id_produk = '$id'");
                         $barang = [];
                         while ($row = mysqli_fetch_assoc($result)) {
                             $barang[] = $row;

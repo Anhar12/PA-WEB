@@ -16,14 +16,13 @@
 
         $sql = "";
         if ($username == $usernameLama){
-            $sql = "UPDATE user SET 
-                    id = '',
+            $sql = "UPDATE user SET
                     `role` = 'user', 
                     `password` = '$password', 
                     email = '$email', 
                     no_hp = '$no_hp', 
-                    alamat = '$alamat',  
-                    WHERE id = '$id'";
+                    alamat = '$alamat'
+                    WHERE id_user = '$id'";
         }
         else {
             $result = mysqli_query($conn, "SELECT username from user where username = '$username'");
@@ -41,7 +40,7 @@
                         email = '$email', 
                         no_hp = '$no_hp', 
                         alamat = '$alamat'
-                        WHERE id = '$id'";
+                        WHERE id_user = '$id'";
             }
         }
         $result = mysqli_query($conn, $sql);
@@ -85,7 +84,7 @@
                     <li> <a href="user.php"> HOME </a></li>
                     <li> <a href="../../produk/list_barang.php"> PRODUCT </a></li>
                     <li> <a href="../../pesanan/pesanan_user.php"> ORDER </a></li>
-                    <li> <a href="" style="color: #FA022E;"> PROFILE </a></li>
+                    <li> <a href="" style="color: #fa022e;"> PROFILE </a></li>
                     <li> <a href="../../logout.php"> LOGOUT </a></li>
                     <li>
                         <label>
@@ -99,22 +98,22 @@
         
     <!-- main content -->
     <div class="form">
-            <form method="post" action="" enctype="multipart/form-data">
+            <form method="POST" action="" enctype="multipart/form-data">
                 <h2>Data Profile User</h2>
                 <div class="order-detail">
                     <?php 
                         $password = $_SESSION["password"];
                         $id = $_GET['id'];
-                        $result = mysqli_query($conn, "SELECT * FROM user WHERE id = '$id'");
+                        $result = mysqli_query($conn, "SELECT * FROM user WHERE id_user = '$id'");
                         $data = [];
                         while ($row = mysqli_fetch_array($result)) {
                             $data[] = $row;
                         }
-                        foreach ($data as $user);
+                        foreach ($data as $user):
                     ?>
                     <div class="input">
                         <span class="detail">Username</span>
-                        <input name="username" type="text" value="<?php echo $user['username']?>" required>
+                        <input name="username" type="text" value="<?php echo ucwords($user['username'])?>" required>
                     </div>
                     <div class="input">
                         <span class="detail">Password</span>
@@ -138,28 +137,12 @@
                     <div class="kelola">
                         <button><a href="user.php">Kembali</a> </button>
                     </div>
+                    <?php
+                        endforeach;
+                    ?>
                 </div>
             </form>
         </div>
-        <!-- <div class="about">
-            <div class="kolomAbout">
-                <img src="img/aku.jpeg">
-            </div>
-            <div class="kolomAbout">
-                <h1> Halo! Perkenalkan</h1>
-                <p>Saya Anhar Khoirun Najib mahasiswa Universitas Mulawarman prodi Informatika,
-                <br> asal saya dari rumah awalnya, tapi sekarang ngekos, cita cita saya ingin menjadi 
-                <br> programmer walaupun saya malas ngodink tapi semoga tercapai aaamiiin
-                <br>
-                    Adapun Biodata saya sebagai berikut : <br/> <br/>
-                    Nama : Anhar Khoirun Najib <br/>
-                    NIM : 2109106081 <br/>
-                    TTL : Sangatta, 13 Januari 2003 <br/>
-                    Nomor Hp : 0858 4572 3207 <br/>
-                    Alamat : Jl. Apt. Pranoto, Gg. Purnama, No.176 <br/>
-                </p>
-            </div>
-        </div> -->
     </div>
 
     <!-- footer -->
@@ -182,6 +165,6 @@
         </footer>
     </div>
     
-    <script src="scriptabout.js"></script>
+    <script src="../../scriptabout.js"></script>
 </body>
 </html>

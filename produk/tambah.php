@@ -68,8 +68,8 @@
             <div class="navbar">
                 <ul>
                     <li> <a href="../pengguna/admin/admin.php"> HOME </a></li>
-                    <li> <a href="../pengguna/admin/admin.php"> PRODUCT </a></li>
-                    <li> <a href="../pengguna/admin/kelola.php"> KELOLA </a></li>
+                    <li> <a href="admin_list_barang.php"> PRODUCT </a></li>
+                    <li> <a href="../pengguna/admin/kelola.php" style="color: #fa022e"> DASHBOARD </a></li>
                     <li> <a href="../logout.php"> LOGOUT </a></li>
                     <li>
                         <label>
@@ -141,6 +141,6 @@
         </footer>
     </div>
         
-    <script src="scriptorder.js"></script>
+    <script src="../scriptorder.js"></script>
 </body>
 </html>

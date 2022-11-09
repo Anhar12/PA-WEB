@@ -73,10 +73,10 @@ input[type="checkbox"]:checked ~ .check:before{
 .check:after {
     border-radius: 50%;
     content: '';
-    height: 16px;
     position: absolute;
     top: 2px;
     transition: transform 0.5s ease;
+    height: 16px;
     width: 16px;
 }
 
@@ -101,6 +101,7 @@ input[type="checkbox"]:checked ~ .check:before{
 /* navbar */
 .atas {
     min-height: 650px;
+    height: auto;
     width: 100%;
     background-image: var(--Atas-color);
     background-position: center;
@@ -115,6 +116,7 @@ input[type="checkbox"]:checked ~ .check:before{
 
 nav {
     padding-top: 20px;
+    padding-bottom: 20px;
     display: flex;
     padding-left: 50px;
     justify-content: space-between;
@@ -189,34 +191,68 @@ nav {
 }
 
 /* search box */
-.search {
-    padding-top: 15px;
-    width: 40%;
-    text-align: center;
-    border-radius: 40px;
-    display: flex;
+.search_barang {
+    width: 90%;
+    /* width: 100%; */
     margin: auto;
-    height: 40px;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: none; */
 }
 
-.searching {
+.crud .search_barang .btn-kelola{
+    margin-left: 0;
+}
+
+.search_barang .btn-kelola button {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.search_barang .btn-kelola button:hover {
+    border: 1px solid rgb(255, 186, 186);
+    box-shadow: 0px 0px 5px 0px rgb(255, 172, 254);
+}
+
+.search {
+    width: 40%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: 1px solid transparent;
+}
+
+.search .searching {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
     font-weight: bold;
     background-color: #f86909;
-    color: black;
+    color: #ffffff;
     font-size: 16px;
-    border: none;
+    border-radius: none;
+    border: 1px solid transparent;
     width: 25%;
+    padding: 12px;
+    margin: 0;
+    cursor: pointer;
+    transition: all 0.5s;
 }
 
 .anu_search {
+    font-size: 16px;
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;
-    max-width: 30;
+    padding: 12px;
     padding-left: 14px;
     background-color: #f86909;
-    border: none;
+    border: 1px solid transparent;
+    /* border: 1px solid yellow; */
     outline: none;
     width: 100%;
 }
@@ -226,41 +262,9 @@ nav {
 }
 
 .searching:hover {
-    transition: 0.4s;
-    background-color: rgb(190, 190, 190);
-}
-
-.hsl_search{
-    display: flex;
-    flex-direction: row;
-    min-width: 80%;
-    margin: auto;
-    justify-content: center;
-}
-
-.hsl_search .kolom{
-    margin: auto;
-    width: 20%;
-    margin-top: 30px;
-}
-
-.hsl_search .produk-detail{
-    text-align: left;
-}
-
-.hsl_search .produk-img{
-    margin: auto;
-}
-
-.hsl_cari h2{
-    margin: auto;
-    font-size: 36px;
-    margin-top: 30px;
-    text-shadow: 0px 0px 2px #F0FF42;
-    font-family: 'Oswald', sans-serif;
-    color: #E5EBB2;
-    border-bottom: 1px solid wheat;
-    width: 60%;
+    background-color: rgb(30, 175, 175);
+    box-shadow: 1px 1px 5px 1px #00F5FF;
+    outline: 0px solid #00F5FF;
 }
 
 /* produk */
@@ -351,7 +355,6 @@ nav {
     color: #252525;
     font-size: 24px;
     padding: 0 10px;
-
 }
 
 .produk .deskripsi-produk .judul {
@@ -683,6 +686,7 @@ textarea:valid {
 
 .crud h1 {
     margin-top: 50px;
+    margin-bottom: 50px;
     color: white;
     text-shadow: 0 0 4px #E5EBB2;
 }
@@ -692,7 +696,7 @@ table{
     border-radius: 5px;
     margin: auto;
     width: 90%;
-    margin-top: 90px;
+    margin-top: 15px;
 }
 
 table tr:nth-child(odd){
@@ -710,12 +714,13 @@ table th{
 }
 
 .crud .btn-kelola {
-    margin-left: 64px;
+    margin-left: 67px;
 }
 
 .crud button{
     margin-right: 15px;
     margin-top: 40px;
+    margin-bottom: 15px;
     width: 120px;
     padding-top: 10px;
     border-radius: 5px;

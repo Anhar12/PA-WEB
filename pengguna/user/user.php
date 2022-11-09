@@ -11,7 +11,7 @@
         $data[] = $row;
     }
     foreach ($data as $user);
-    $id = $user["id"];
+    $id = $user["id_user"];
 ?>
 
 <!DOCTYPE html>
@@ -54,13 +54,6 @@
             <p> Smartphone store terbaik di Samarinda, dapat memberikan layanan terbaik mulai dari penjualan yang murah meriah, aman di kantong, serta amanah dan istiqomah </p>
             <p> Ayo! Tunggu apalagi, segera belanja di AnharZtore! </p>
         </div>
-
-        <form action="hasil_search.php" method="post">
-            <div class="search">
-                <input type="text" placeholder="Cari produk yang anda inginkan" maxlength="50" class="anu_search" name="cari">
-                <input type="submit" value="SEARCH" name="search" class="searching">
-            </div>
-        </form>
     </div>
 
     <div class="bawahHome">
@@ -69,16 +62,14 @@
             <p class="best-seller"> Berbagai macam produk smarthphone dengan berbagai variasi harga yang pastinya murah meriah, aman di kantong, dan pastinya amanah, serta istiqomah </p>
             <div class="box-produk">
                 <?php
-                    $result = mysqli_query($conn, "SELECT * FROM produk");
+                    $result = mysqli_query($conn, "SELECT * FROM produk LIMIT 5");
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<div class='produk'>";
-                            echo "<img src='../../img/$row[gambar]' alt='Gambar Produk'>";
+                            echo "<a href='../../detail-produk.php?id=$row[id_produk]'><img src='../../img/$row[gambar]' alt='Gambar Produk'></a>";
                             echo "<div class='deskripsi-produk'>";
-                                // tag a belum diatur ke halaman detail produk
-                                echo "<a href='../../pesanan/tambah_pesanan_user.php?id=$row[id]'><h4>$row[nama]</h4></a>";
-                                // <a href="../pengguna/user/profile.php?id=<?php echo $id;
-                                echo "<p class='harga'>Rp $row[harga]</p>";
-                                echo "<a href='../../cek_login.php?id=$row[id]' class='btn-produk'>Beli Sekarang</a>";
+                            echo "<a href='../../detail-produk.php?id=$row[id_produk]'><h4>$row[nama]</h4></a>";
+                            echo "<p class='harga'>Rp $row[harga]</p>";
+                            echo "<a href='../../cek_login.php?id=$row[id_produk]' class='btn-produk'>Beli Sekarang</a>";
                             echo "</div>";
                         echo "</div>";
                     }
