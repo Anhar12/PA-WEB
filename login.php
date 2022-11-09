@@ -1,7 +1,6 @@
 <?php 
     session_start();
     require "koneksi.php";
-
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +46,7 @@
 
     <?php
         if (isset($_POST['submit'])) {
-            $username = $_POST["username"];
+            $username = strtolower($_POST["username"]);
             $password = $_POST["password"];
 
             $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
@@ -55,7 +54,7 @@
             if (mysqli_num_rows($result) === 1){
                 $row = mysqli_fetch_assoc($result);
 
-                if (password_verify($password, $row['password'])){
+                if (password_verify($password, $row['password']) && $username == $row['username']){
                     if ($row['role'] == 'admin'){
                         $_SESSION["priv"] = "admin";
                         header("Location: pengguna/admin/admin.php");
