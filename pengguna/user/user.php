@@ -56,7 +56,7 @@
         </div>
     </div>
 
-    <div class="bawahHome">
+    <div class="bawah">
         <div class="container" id="product">
             <h1> Best Seller Dari AnharZtore </h1>
             <p class="best-seller"> Berbagai macam produk smarthphone dengan berbagai variasi harga yang pastinya murah meriah, aman di kantong, dan pastinya amanah, serta istiqomah </p>
