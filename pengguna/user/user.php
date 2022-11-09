@@ -36,6 +36,7 @@
                     <li> <a href="" style="color: #FA022E;"> HOME </a></li>
                     <li> <a href="../../produk/list_barang.php"> PRODUCT </a></li>
                     <li> <a href="../../pesanan/pesanan_user.php"> ORDER </a></li>
+                    <li> <a href="../../kontak.php"> KONTAK </a></li>
                     <li> <a href="profile.php?id=<?php echo $id; ?>"> PROFILE </a></li>
                     <li> <a href="../../logout.php"> LOGOUT </a></li>
                     <li>
