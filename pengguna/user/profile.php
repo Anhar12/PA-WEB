@@ -29,7 +29,7 @@
             if (mysqli_fetch_assoc($result)){
                 echo "
                     <script>
-                        alert('Username Telah Digunakan, Silahkan Gunakan Username Yang Lain');
+                        alert('Username Telah Digunakan, Silahkan gunakan Username yang lain');
                         document.location.href = 'user.php';
                     </script>";
             } else {
