@@ -810,25 +810,34 @@ table a{
     width: 100px;
 }
 
-/* media */
+/* media query*/
 @media screen and (max-width: 700px){
+    .atas{
+        min-height: 500px;
+    }
     #logo {
-        font-size: 20px;
+        font-size: 26px;
+    }
+    nav{
+        padding: 15px;
     }
     .navbar ul li{
         display: inline-flex;
         flex-direction: row;
-        padding: 12px 12px;
+        padding: 8px 8px;
         top: 0;
     }
     .navbar ul li a{
-        font-size: 10px;
+        font-size: 13px;
     }
     .deskripsi h1 {
-        font-size: 30px;
+        font-size: 32px;
     }
     .deskripsi p {
-        font-size: 9px;
+        font-size: 12px;
+    }
+    .search{
+        height: 30px;
     }
     .search input {
         font-size: 9px;
@@ -836,45 +845,305 @@ table a{
     .search button {
         font-size: 9px;
     }
-    .produk h1 {
-        font-size: 25px;
+    .produk {
+        margin: 20px;
+        width: 30%;
     }
-    .produk p {
-        font-size: 9px;
+    .deskripsi-produk .judul{
+        font-size: 10px;
     }
-    .baris1 p {
-        font-size: 6px;
-    } 
-    .baris2 p {
-        font-size: 6px;
+    .kolomReview{
+        padding: 5px;
     }
-    .kolom {
-        width: 35%;
-    }
-    .produk img {
-        width: 50%;
+    .kolomReview img{
+        margin: 10px;
     }
     .review h1 {
-        font-size: 16px;
+        font-size: 26px;
         margin-bottom: 20px;
     }
     .review p {
-        font-size: 9px;
+        padding: 5px;
+        font-size: 12px;
+        text-align: left;
     }
     .review i {
-        font-size: 6px;
+        font-size: 12px;
     }
     .review h2 {
-        font-size: 10px;
+        font-size: 12px;
     }
     footer p {
-        font-size: 9px;
+        font-size: 12px;
     }
     #kontak{
         width: 70%;
     }
     footer .fa {
+        font-size: 16px;
+    }
+    .crud h1{
+        font-size: 28px;
+    }
+    .crud table{
+        font-size: 7px;
+    }
+    .crud table tr{
+        height: 8px;
+    }
+    .crud button{
+        width: 15%;
+        padding: 5px;
+    }
+    .crud .btn-kelola{
+        margin-bottom: 5px;
+        margin-left: 20px;
+    }
+    .crud .btn-kelola-admin{
+        margin-bottom: 5px;
+        margin-left: 33px;
+    }
+    .crud button a{
+        font-size: 12px;
+    }
+    table{
+        margin-top: 70px;
+    }
+    input[type="checkbox"]:checked ~ .check:before{
+        transform: translateX(10px);
+    }
+    .check:before,
+    .check:after {
+        height: 12px;
+        top: 0;
+        width: 12px;
+    }
+    .check:before {
+        left: 0;
+    }
+    .check {
+        height: 12px;
+        width: 24px;
+    }
+    .form {
+        padding-top: 0;
+        margin-top: 20px;
+        width: 40%;
+        min-height: 370px;
+    }
+    .form .input{
+        width: 95%;
+    }
+    .form textarea{
+        width: 140%;
+        height: 100px;
+        font-size: 12px;
+    }
+    .form button{
+        width: 20%;
+        margin-left: 6px;
+        padding: 4px;
+    }
+    .form .detail{
+        text-align: left;
+    }
+    .kelola button a{
+        font-size: 12px;
+    }
+    #gmbr_tbl{
+        width: 50%;
+    }
+
+    .about h1 {
+        font-size: 35px;
+    }
+    .about p {
+        font-size: 9px;
+    }
+    .about img {
+        width: 50%;
+    }
+    .form h2 {
+        font-size: 24px;
+    }
+    .order-detail {
+        font-size: 9px;
+        width: 250px;
+        
+    }
+    .detail {
+        padding-top: 5px;
+        width: 150px;
+    }
+    .input {
+        width: 250px;
+        margin: 10px;
+    }
+    .input input {
+        font-size: 9px;
+        height: 20px;
+        width: 330px;
+    }
+    .submitButton input{
+        font-size: 20px;
+        height: 25px;
+    } 
+}
+
+@media screen and (max-width: 420px){
+    #logo {
+        font-size: 14px;
+    }
+    .bawah{
+        padding-top: 20px;
+    }
+    nav{
+        padding: 5px;
+    }
+    .navbar ul li{
+        padding: 2px 2px;
+        top: 0;
+    }
+    .navbar ul li a{
+        font-size: 8px;
+    }
+    .deskripsi h1 {
+        font-size: 22px;
+    }
+    .deskripsi p {
         font-size: 10px;
+    }
+    .search{
+        height: 20px;
+        width: 65%;
+    }
+    .container h1{
+        font-size: 26px;
+    }
+    .container p{
+        font-size: 10px;
+    }
+    .produk {
+        margin: 20px;
+        width: 50%;
+    }
+    .deskripsi-produk .judul{
+        font-size: 10px;
+    }
+    .kolomReview{
+        padding: 0px;
+    }
+    .kolomReview img{
+        margin: 5px;
+        width: 25px;
+        height: 25px;
+    }
+    .review h1 {
+        font-size: 16px;
+    }
+    .review .baris{
+        margin-top: 10px;
+    }
+    .review p {
+        font-size: 9px;
+        text-align: left;
+    }
+    .review i {
+        font-size: 5px;
+    }
+    .review .fa{
+        margin: 2px;
+        padding: 0;
+    }
+    .review h2 {
+        font-size: 9px;
+        margin: 3px;
+    }
+    footer p {
+        font-size: 12px;
+    }
+    #kontak{
+        width: 80%;
+    }
+    .review{
+        margin-bottom: 40px;
+    }
+    footer{
+        padding-top: 0;
+    }
+    footer .fa {
+        font-size: 9px;
+    }
+    .crud h1{
+        font-size: 28px;
+    }
+    .crud table{
+        font-size: 7px;
+    }
+    .crud table tr{
+        height: 8px;
+    }
+    .crud button{
+        width: 15%;
+        padding: 5px;
+    }
+    .crud .btn-kelola{
+        margin-bottom: 5px;
+        margin-left: 20px;
+    }
+    .crud .btn-kelola-admin{
+        margin-bottom: 5px;
+        margin-left: 33px;
+    }
+    .crud button a{
+        font-size: 12px;
+    }
+    table{
+        margin-top: 70px;
+    }
+    input[type="checkbox"]:checked ~ .check:before{
+        transform: translateX(6px);
+    }
+    .check:before,
+    .check:after {
+        height: 8px;
+        top: 0;
+        width: 8px;
+    }
+    .check:before {
+        left: 0;
+    }
+    .check {
+        height: 8px;
+        width: 16px;
+    }
+    .form {
+        padding-top: 0;
+        margin-top: 20px;
+        width: 40%;
+        min-height: 370px;
+    }
+    .form .input{
+        width: 95%;
+    }
+    .form textarea{
+        width: 140%;
+        height: 100px;
+        font-size: 12px;
+    }
+    .form button{
+        width: 20%;
+        margin-left: 6px;
+        padding: 4px;
+    }
+    .form .detail{
+        text-align: left;
+    }
+    .kelola button a{
+        font-size: 12px;
+    }
+    #gmbr_tbl{
+        width: 50%;
     }
     .about h1 {
         font-size: 35px;
@@ -885,14 +1154,8 @@ table a{
     .about img {
         width: 50%;
     }
-    .form {
-        margin-top: 50px;
-        padding: 0px;
-        width: 300px;
-        height: 370px;
-    }
     .form h2 {
-        font-size: 25px;
+        font-size: 24px;
     }
     .order-detail {
         font-size: 9px;
@@ -912,95 +1175,361 @@ table a{
         height: 20px;
         width: 330px;
     }
-    .input select{
+    .submitButton input{
+        font-size: 20px;
+        height: 25px;
+    } 
+    
+}
+@media screen and (max-width: 700px){
+    .atas{
+        min-height: 500px;
+    }
+    #logo {
+        font-size: 26px;
+    }
+    nav{
+        padding: 15px;
+    }
+    .navbar ul li{
+        display: inline-flex;
+        flex-direction: row;
+        padding: 8px 8px;
+        top: 0;
+    }
+    .navbar ul li a{
+        font-size: 13px;
+    }
+    .deskripsi h1 {
+        font-size: 32px;
+    }
+    .deskripsi p {
+        font-size: 12px;
+    }
+    .search{
+        height: 30px;
+    }
+    .search input {
+        font-size: 9px;
+    }
+    .search button {
+        font-size: 9px;
+    }
+    .produk {
+        margin: 20px;
+        width: 30%;
+    }
+    .deskripsi-produk .judul{
+        font-size: 10px;
+    }
+    .kolomReview{
+        padding: 5px;
+    }
+    .kolomReview img{
+        margin: 10px;
+    }
+    .review h1 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+    .review p {
+        padding: 5px;
+        font-size: 12px;
+        text-align: left;
+    }
+    .review i {
+        font-size: 12px;
+    }
+    .review h2 {
+        font-size: 12px;
+    }
+    footer p {
+        font-size: 12px;
+    }
+    #kontak{
+        width: 70%;
+    }
+    footer .fa {
+        font-size: 16px;
+    }
+    .crud h1{
+        font-size: 28px;
+    }
+    .crud table{
+        font-size: 7px;
+    }
+    .crud table tr{
+        height: 8px;
+    }
+    .crud button{
+        width: 15%;
+        padding: 5px;
+    }
+    .crud .btn-kelola{
+        margin-bottom: 5px;
+        margin-left: 20px;
+    }
+    .crud .btn-kelola-admin{
+        margin-bottom: 5px;
+        margin-left: 33px;
+    }
+    .crud button a{
+        font-size: 12px;
+    }
+    table{
+        margin-top: 70px;
+    }
+    input[type="checkbox"]:checked ~ .check:before{
+        transform: translateX(10px);
+    }
+    .check:before,
+    .check:after {
+        height: 12px;
+        top: 0;
+        width: 12px;
+    }
+    .check:before {
+        left: 0;
+    }
+    .check {
+        height: 12px;
+        width: 24px;
+    }
+    .form {
+        padding-top: 0;
+        margin-top: 20px;
+        width: 40%;
+        min-height: 370px;
+    }
+    .form .input{
+        width: 95%;
+    }
+    .form textarea{
+        width: 140%;
+        height: 100px;
+        font-size: 12px;
+    }
+    .form button{
+        width: 20%;
+        margin-left: 6px;
+        padding: 4px;
+    }
+    .form .detail{
+        text-align: left;
+    }
+    .kelola button a{
+        font-size: 12px;
+    }
+    #gmbr_tbl{
+        width: 50%;
+    }
+
+    .about h1 {
+        font-size: 35px;
+    }
+    .about p {
+        font-size: 9px;
+    }
+    .about img {
+        width: 50%;
+    }
+    .form h2 {
+        font-size: 24px;
+    }
+    .order-detail {
+        font-size: 9px;
+        width: 250px;
+        
+    }
+    .detail {
+        padding-top: 5px;
+        width: 150px;
+    }
+    .input {
+        width: 250px;
+        margin: 10px;
+    }
+    .input input {
         font-size: 9px;
         height: 20px;
-        width: 340px;
-    }
-    .metodePembayaran{
-        padding-top: 5px;
-        padding-left: 9px;
-    }
-    .dot {
-        width: 5px;
-        height: 5px;
+        width: 330px;
     }
     .submitButton input{
         font-size: 20px;
         height: 25px;
+    } 
+    .search .searching {
+        padding-top: 8px;
+        padding-bottom: 7px;
     }
 }
 
-@media screen and (max-width: 415px){
-    .atas {
-        height: 500px;
-    }
+@media screen and (max-width: 420px){
     #logo {
-        padding-top: 8px;
-        font-size: 12px;
-        width: 68px;
+        font-size: 14px;
     }
-    nav {
-        padding: 0px;
-        padding-left: 15px;
+    .bawah{
+        padding-top: 20px;
     }
-    .navbar ul li{
+    nav{
         padding: 5px;
     }
+    .navbar ul li{
+        padding: 2px 2px;
+        top: 0;
+    }
     .navbar ul li a{
-        font-size: 7px;
-    }
-    .search {
-        width: 200px;
-        height: 24px;
-    }
-    .search input {
-        font-size: 7px;
-    }
-    .search button {
-        font-size: 7px;
-        padding-right: 3px;
-        padding-left: 3px;
-    }
-    .kolom img{
-        width: 55px;
-    }
-    .kolom p {
-        float: left;
         font-size: 8px;
     }
-    .kolom {
-        margin-bottom: 10px;
+    .deskripsi h1 {
+        font-size: 22px;
     }
-    .baris1{
-        margin-top: 10px;
+    .deskripsi p {
+        font-size: 10px;
     }
-    .review {
-        padding-top: 50px;
+    .search{
+        height: 20px;
+        width: 65%;
+    }
+    .container h1{
+        font-size: 26px;
+    }
+    .container p{
+        font-size: 10px;
+    }
+    .produk {
+        margin: 20px;
+        width: 50%;
+    }
+    .deskripsi-produk .judul{
+        font-size: 10px;
     }
     .kolomReview{
-        padding: 10px;
+        padding: 0px;
     }
-    .kolomReview img {
-        width: 35px;
-        height: 35px;
-        margin-right: 5px;
+    .kolomReview img{
+        margin: 5px;
+        width: 25px;
+        height: 25px;
     }
-    #kontak {
-        width: 410px;
-        font-size: 8px;
+    .review h1 {
+        font-size: 16px;
+    }
+    .review .baris{
+        margin-top: 10px;
+    }
+    .review p {
+        font-size: 9px;
+        text-align: left;
+    }
+    .review i {
+        font-size: 5px;
+    }
+    .review .fa{
+        margin: 2px;
+        padding: 0;
+    }
+    .review h2 {
+        font-size: 9px;
+        margin: 3px;
+    }
+    footer p {
+        font-size: 12px;
+    }
+    #kontak{
+        width: 80%;
+    }
+    .review{
+        margin-bottom: 40px;
+    }
+    footer{
+        padding-top: 0;
+    }
+    footer .fa {
+        font-size: 9px;
+    }
+    .crud h1{
+        font-size: 28px;
+    }
+    .crud table{
+        font-size: 7px;
+    }
+    .crud table tr{
+        height: 8px;
+    }
+    .crud button{
+        width: 15%;
+        padding: 5px;
+    }
+    .crud .btn-kelola{
+        margin-bottom: 5px;
+        margin-left: 20px;
+    }
+    .crud .btn-kelola-admin{
+        margin-bottom: 5px;
+        margin-left: 33px;
+    }
+    .crud button a{
+        font-size: 12px;
+    }
+    table{
+        margin-top: 70px;
+    }
+    input[type="checkbox"]:checked ~ .check:before{
+        transform: translateX(6px);
+    }
+    .check:before,
+    .check:after {
+        height: 8px;
+        top: 0;
+        width: 8px;
+    }
+    .check:before {
+        left: 0;
+    }
+    .check {
+        height: 8px;
+        width: 16px;
     }
     .form {
-        margin-top: 10px;
-        padding: 0px;
-        width: 300px;
-        height: 370px;
+        padding-top: 0;
+        margin-top: 20px;
+        width: 40%;
+        min-height: 370px;
+    }
+    .form .input{
+        width: 95%;
+    }
+    .form textarea{
+        width: 140%;
+        height: 100px;
+        font-size: 12px;
+    }
+    .form button{
+        width: 20%;
+        margin-left: 6px;
+        padding: 4px;
+    }
+    .form .detail{
+        text-align: left;
+    }
+    .kelola button a{
+        font-size: 12px;
+    }
+    #gmbr_tbl{
+        width: 50%;
+    }
+    .about h1 {
+        font-size: 35px;
+    }
+    .about p {
+        font-size: 9px;
+    }
+    .about img {
+        width: 50%;
     }
     .form h2 {
-        font-size: 25px;
-    }
-    .form option{
-        width: 50px;
+        font-size: 24px;
     }
     .order-detail {
         font-size: 9px;
@@ -1020,54 +1549,8 @@ table a{
         height: 20px;
         width: 330px;
     }
-    .input select{
-        font-size: 9px;
-        height: 20px;
-        width: 340px;
-    }
-    .metodePembayaran{
-        padding-top: 5px;
-        padding-left: 9px;
-    }
-    .dot {
-        width: 5px;
-        height: 5px;
-    }
     .submitButton input{
         font-size: 20px;
         height: 25px;
-    }
-    .about{
-        margin: auto;
-        padding-top: 30px;
-    }
-    .kolomAbout{
-        width: 400px;
-    }
-    .about h1 {
-        margin-bottom: 0;
-        font-size: 20px;
-    }
-    .about img {
-        width: 75%;
-        margin-left: 10px;
-    }
-    .bawah{
-        padding-top: 10px;
-    }
-    .tampilanForm{
-        padding: 0;
-    }
-    .tampilanForm h2{
-        font-size: 20px;
-    }
-    .data{
-        margin: 2px;
-    }
-    .balik a {
-        margin-left: 47px;
-    }
-    .tampilanForm .order-detail{
-        margin-bottom: 10px;
-    }
+    } 
 }
