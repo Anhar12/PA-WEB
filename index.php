@@ -28,6 +28,7 @@ require 'koneksi.php';
                     <li> <a href="#product"> PRODUCT </a></li>
                     <li> <a href="about.php"> ABOUT </a></li>
                     <li> <a href="login.php"> LOGIN </a></li>
+                    <li></li>
                     <li>
                         <label>
                             <input type="checkbox" class="checkbox" id="tombol">
@@ -58,8 +59,7 @@ require 'koneksi.php';
                             echo "<a href='detail-produk.php?id=$row[id_produk]'><img src='img/$row[gambar]' alt='Gambar Produk'></a>";
                             echo "<div class='deskripsi-produk'>";
                             echo "<a href='detail-produk.php?id=$row[id_produk]'><h4>$row[nama]</h4></a>";
-                            $harga = number_format($row['harga'], 0,'.','.');
-                            echo "<p class='harga'>Rp $harga</p>";
+                            echo "<p class='harga'>Rp $row[harga]</p>";
                             echo "<a href='cek_login.php?id=$row[id_produk]' class='btn-produk'>Beli Sekarang</a>";
                             echo "</div>";
                         echo "</div>";
