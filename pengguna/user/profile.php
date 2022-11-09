@@ -1,4 +1,4 @@
-<!-- tes push -->
+
 <?php
     session_start();
     if ($_SESSION["priv"] != "user") {
