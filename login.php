@@ -54,7 +54,7 @@
             if (mysqli_num_rows($result) === 1){
                 $row = mysqli_fetch_assoc($result);
 
-                if (password_verify($password, $row['password'])){
+                if (password_verify($password, $row['password']) && $username == $row['username']){
                     if ($row['role'] == 'admin'){
                         $_SESSION["priv"] = "admin";
                         header("Location: pengguna/admin/admin.php");
