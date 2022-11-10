@@ -32,7 +32,7 @@
         $id_produk = $produk["id_produk"];
         $metode_pembayaran = $_POST["metode_pembayaran"];
         $jumlah = $jumlah;
-        $total_harga = $_POST["total"];
+        $total_harga = $total;
         $waktu = date("y-m-d h:i:s");
         $atas_nama = $_POST["atas_nama"];
         $status = "menunggu";

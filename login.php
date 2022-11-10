@@ -46,7 +46,7 @@
 
     <?php
         if (isset($_POST['submit'])) {
-            $username = strtolower($_POST["username"]);
+            $username = $_POST["username"];
             $password = $_POST["password"];
 
             $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");

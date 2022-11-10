@@ -96,7 +96,7 @@
                     </div>
                     <div class="input">
                         <span class="detail"> Total Harga </span>
-                        <input name="total" type="text" value="Rp. <?php echo number_format($pesan['total_harga'], 0, '.', '.') ?>" readonly
+                        <input name="total" type="text" value="Rp <?php echo number_format($pesan['total_harga'], 0, '.', '.') ?>" readonly
                                 style="
                                     box-shadow: 0px 0px 5px 0px rgb(255, 172, 254);
                                     border-color: rgb(198, 72, 37);">

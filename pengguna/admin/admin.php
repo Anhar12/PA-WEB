@@ -54,7 +54,7 @@
             <p class="best-seller"> Berbagai macam produk smarthphone dengan berbagai variasi harga yang pastinya murah meriah, aman di kantong, dan pastinya amanah, serta istiqomah </p>
             <div class="box-produk">
                 <?php
-                    $result = mysqli_query($conn, "SELECT * FROM produk");
+                    $result = mysqli_query($conn, "SELECT * FROM produk LIMIT 5");
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<div class='produk'>";
                             echo "<a href='../../detail-produk.php?id=$row[id_produk]'><img src='../../img/$row[gambar]' alt='Gambar Produk'></a>";
