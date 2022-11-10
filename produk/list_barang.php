@@ -39,6 +39,7 @@ if (isset($_SESSION["username"])){
                 echo "<li> <a href='../pengguna/user/user.php'> HOME </a></li>";
                 echo "<li> <a href='' style='color: #FA022E;'> PRODUCT </a></li>";
                 echo "<li> <a href='../pesanan/pesanan_user.php'> ORDER </a></li>";
+                echo "<li> <a href='../kontak.php'> KONTAK </a></li>";
                 echo "<li> <a href='../pengguna/user/profile.php?id=<?php echo $id; ?>'> PROFILE </a></li>";
                 echo "<li> <a href='../logout.php'> LOGOUT </a></li>";
               }

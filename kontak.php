@@ -5,6 +5,16 @@ if ($_SESSION["priv"] != "admin" and $_SESSION["priv"] != "user"){
     header("Location: index.php?id=$_GET[id]");
     return;
 }
+if (isset($_SESSION["username"])){
+  $username = $_SESSION["username"];
+  $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+  $data = [];
+  while ($row = mysqli_fetch_array($result)) {
+    $data[] = $row;
+  }
+  foreach ($data as $user);
+  $id = $user["id_user"];
+}
 ?>
 
 <!DOCTYPE html>
@@ -96,10 +106,10 @@ if ($_SESSION["priv"] != "admin" and $_SESSION["priv"] != "user"){
                     foreach ($data as $user);
                     $id = $user["id_user"];
                     echo "<li> <a href='pengguna/user/user.php'> HOME </a></li>";
-                    echo "<li> <a href='produk/list_barang.php' style='color: #FA022E;'> PRODUCT </a></li>";
+                    echo "<li> <a href='produk/list_barang.php' '> PRODUCT </a></li>";
                     echo "<li> <a href='pesanan/pesanan_user.php'> ORDER </a></li>";
-                    echo "<li> <a href='kontak.php; ?>'> KONTAK </a></li>";
-                    echo "<li> <a href='pengguna/user/profile.php; ?>'> PROFILE </a></li>";
+                    echo "<li> <a href='kontak.php' style='color: #FA022E;'> KONTAK </a></li>";
+                    echo "<li> <a href='pengguna/user/profile.php?id=<?php echo $id; ?>'> PROFILE </a></li>";
                     echo "<li> <a href='logout.php'> LOGOUT </a></li>";
 
                 ?>  
