@@ -109,7 +109,7 @@ if (isset($_SESSION["username"])){
                     echo "<li> <a href='produk/list_barang.php' '> PRODUCT </a></li>";
                     echo "<li> <a href='pesanan/pesanan_user.php'> ORDER </a></li>";
                     echo "<li> <a href='kontak.php' style='color: #FA022E;'> KONTAK </a></li>";
-                    echo "<li> <a href='pengguna/user/profile.php?id=<?php echo $id; ?>'> PROFILE </a></li>";
+                    echo "<li> <a href='pengguna/user/profile.php?id= $id'> PROFILE </a></li>";
                     echo "<li> <a href='logout.php'> LOGOUT </a></li>";
 
                 ?>  
