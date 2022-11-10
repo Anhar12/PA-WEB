@@ -39,6 +39,7 @@ if ($_SESSION["priv"] != "admin" and $_SESSION["priv"] != "user"){
 
     .contact .row .image img{
       width: 70%;
+      padding-left:20%;
     }
 
     .contact .row form{
@@ -46,6 +47,7 @@ if ($_SESSION["priv"] != "admin" and $_SESSION["priv"] != "user"){
       flex: 0 1 30%;
       padding: 0.5rem 2rem;
       text-align: center;
+      background-color:#fff;
     }
 
     .contact .row form h3{
@@ -110,28 +112,28 @@ if ($_SESSION["priv"] != "admin" and $_SESSION["priv"] != "user"){
                 </ul>
             </div>
         </nav> 
-        
-    </div>
-<!-- formulir kontak -->
+       <!-- formulir kontak -->
     <section class="contact">
 
-          <div class="row">
+      <div class="row">
 
-              <div class="image">
-                <img src="img/Contact us-pana.svg" alt="">
-              </div>
-
-              <form action="" method="post">
-                <h3>tell us something!</h3>
-                <input type="text" name="name" maxlength="50" class="box" placeholder="enter your name" required>
-                <input type="email" name="email" maxlength="50" class="box" placeholder="enter your email" required>
-                <textarea name="msg" class="box" required placeholder="enter your message" maxlength="500" cols="30" rows="10"></textarea>
-                <input type="submit" value="send message" name="send" class="btn">
-              </form>
-
+          <div class="image">
+            <img src="img/Contact us-pana.svg" alt="">
           </div>
 
-        </section>
+          <form action="" method="post">
+            <h3>tell us something!</h3>
+            <input type="text" name="name" maxlength="50" class="box" placeholder="enter your name" required>
+            <input type="email" name="email" maxlength="50" class="box" placeholder="enter your email" required>
+            <textarea name="msg" class="box" required placeholder="enter your message" maxlength="500" cols="30" rows="10"></textarea>
+            <input type="submit" value="send message" name="send" class="btn">
+          </form>
+
+      </div>
+
+      </section> 
+    </div>
+
 <?php
 
 if(isset($_POST['send'])){
