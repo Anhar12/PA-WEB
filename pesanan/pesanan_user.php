@@ -56,7 +56,6 @@
             display: flex;
             text-align: left;
             flex-direction: column;
-
         }
         .pesanan p {
             padding: 0;
@@ -128,16 +127,27 @@
             
             <div class="boxPesanan">
                 <?php 
-                    $result = mysqli_query( $conn, 
+                    // $cekPesanan = mysqli_query($conn, "SELECT * FROM pesanan WHERE id_user = ")
+                    $result = mysqli_query($conn, 
                                 "SELECT * FROM pesanan 
                                 INNER JOIN user ON pesanan.id_user = user.id_user
                                 INNER JOIN produk ON pesanan.id_produk = produk.id_produk
                                 WHERE pesanan.id_user = '$id'");
-                    $pesanan = [];
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $pesanan[] = $row;
+                    if (mysqli_num_rows($result) === 0){
+                        echo "<p
+                        style='
+                            color: #ffffff;
+                            font-size: 24px;
+                            width: 100%;
+                        '> 
+                        Tidak Ada Pesanan </p>";
                     }
-                    foreach ($pesanan as $pesan):
+                    else {
+                        $pesanan = [];
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $pesanan[] = $row;
+                        }
+                        foreach ($pesanan as $pesan):
                 ?>
                 <div class="pesanan">
                     <img src="../img/<?php echo $pesan['gambar'];?>" alt="Gambar Produk">
@@ -198,8 +208,9 @@
                         </div>
                     </div>
                 </div>
-                <?php 
-                    endforeach;
+                    <?php 
+                        endforeach;
+                    }
                 ?>
             </div>
             <!-- <div class="boxPesanan">
