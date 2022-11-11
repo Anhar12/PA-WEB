@@ -823,6 +823,9 @@ table a{
 
 /* media query*/
 @media screen and (max-width: 700px){
+    .bawah{
+        padding-top: 10px;
+    }
     .atas{
         min-height: 500px;
     }
@@ -852,9 +855,17 @@ table a{
     }
     .search input {
         font-size: 9px;
+        height: 8px;
     }
-    .search button {
-        font-size: 9px;
+    .search .searching{
+        font-size: 12px;
+        padding: 9px;
+    }
+    .crud .anu_search{
+        width: 150px;
+    }
+    .crud table{
+        margin-top: 10px;
     }
     .produk {
         margin: 20px;
@@ -884,6 +895,10 @@ table a{
     .review h2 {
         font-size: 12px;
     }
+    footer{
+        padding-top: 0;
+        margin-top: 0;
+    }
     footer p {
         font-size: 12px;
     }
@@ -894,7 +909,8 @@ table a{
         font-size: 16px;
     }
     .crud h1{
-        font-size: 28px;
+        font-size: 22px;
+        margin: 30px;
     }
     .crud table{
         font-size: 7px;
@@ -907,8 +923,10 @@ table a{
         padding: 5px;
     }
     .crud .btn-kelola{
-        margin-bottom: 5px;
         margin-left: 20px;
+    }
+    .crud .btn-kelola button{
+        width: 100px;
     }
     .crud .btn-kelola-admin{
         margin-bottom: 5px;
@@ -964,7 +982,9 @@ table a{
     #gmbr_tbl{
         width: 50%;
     }
-
+    .img-container img{
+        width: 150px;
+    }
     .about h1 {
         font-size: 35px;
     }
@@ -975,12 +995,12 @@ table a{
         width: 50%;
     }
     .form h2 {
-        font-size: 24px;
+        padding-top: 10px;
+        font-size: 20px;
     }
     .order-detail {
         font-size: 9px;
         width: 250px;
-        
     }
     .detail {
         padding-top: 5px;
@@ -999,14 +1019,31 @@ table a{
         font-size: 20px;
         height: 25px;
     } 
+    .container .produk-div-right{
+        margin: 0;
+    }
+    .boxPesanan .pesanan{
+        width: 50%;
+    }
+    .boxPesanan img{
+        width: 45%;
+    }
 }
 
 @media screen and (max-width: 420px){
     #logo {
         font-size: 14px;
     }
+    .atas{
+        min-height: 350px;
+        padding-bottom: 20px;
+    }
     .bawah{
-        padding-top: 20px;
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .bawah .container{
+        padding-top: 0;
     }
     nav{
         padding: 5px;
@@ -1016,6 +1053,7 @@ table a{
         top: 0;
     }
     .navbar ul li a{
+        margin: 2px;
         font-size: 8px;
     }
     .deskripsi h1 {
@@ -1030,6 +1068,7 @@ table a{
     }
     .container h1{
         font-size: 26px;
+        margin: 0;
     }
     .container p{
         font-size: 10px;
@@ -1086,7 +1125,7 @@ table a{
         font-size: 9px;
     }
     .crud h1{
-        font-size: 28px;
+        font-size: 22px;
     }
     .crud table{
         font-size: 7px;
@@ -1190,5 +1229,4 @@ table a{
         font-size: 20px;
         height: 25px;
     } 
-    
 }
