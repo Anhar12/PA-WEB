@@ -37,7 +37,7 @@
         }
         .pesanan {
             margin: auto;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             width: 29%;
             padding: 10px;
             border: 1px solid rgba(255, 255, 255, 0.25);
