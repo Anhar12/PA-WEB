@@ -16,7 +16,7 @@
 </head>
 <body>
     <div class="atas">
-        <a href="#" id="logo"> Anhar <font color="#f86909"> Ztore </font> </a>
+        <a href="index.php" id="logo"> Anhar <font color="#f86909"> Ztore </font> </a>
         <div class="login"> 
             <div class="title">
                 <h1> LOGIN </h1>

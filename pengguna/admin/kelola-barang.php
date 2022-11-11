@@ -46,7 +46,7 @@
             <form action="" class="search_barang" method="GET">
                 <div class="btn-kelola">
                     <button> <a href="kelola.php">Kembali</a> </button>
-                    <button> <a href="../../produk/tambah.php">Tambah Data</a> </button>
+                    <button> <a href="../../produk/tambah.php">Tambah Produk</a> </button>
                 </div>
                 <div class="search" style="width: 45%;">
                     <input type="text" placeholder="Cari data yang anda inginkan" maxlength="50" class="anu_search" name="cari" style="color: #ffffff;">
@@ -74,6 +74,15 @@
                                 kategori LIKE '%$keyword%' OR
                                 deskripsi LIKE '%$keyword%' OR
                                 stock LIKE '%$keyword%'");
+                        if (mysqli_num_rows($result) === 0){
+                            echo "<p
+                                style='
+                                    color: #ffffff;
+                                    font-size: 24px;
+                                    width: 100%;
+                                '> 
+                                Oops, Data Tidak Ditemukan </p>";
+                            }
                     }
                     else {
                         $result = mysqli_query($conn, "SELECT * FROM produk");
@@ -103,29 +112,7 @@
                 ?>
             </table>
         </div>
-
     </div>
-
-    <!-- footer -->
-    <div class="bawah">
-        <footer class="footerAbout">
-            <div class="footer">
-                <p>
-                    Jangan lupa belanja di AnharZtore, serta follow akun ig saya <a href="https://www.instagram.com/anharrrrrr_/" id="ig"> @anharrrrrr_ </a> 
-                    <br>
-                    Demikian tampilan web Posttest 5 saya, wassalamualaikum warahmatullahi wabarakatuh
-                </p>
-            </div>
-            <div id="kontak">
-                <i class="fa fa-whatsapp"> 085845723207 </i>
-                <i class="fa fa-instagram"> anharrrrrr_ </i>
-                <i class="fa fa-envelope-o"> anharkhoirun@gmail.com </i>
-                <i class="fa fa-github"> Anhar12 </i>
-            </div>
-            <p> @Copyright 2022 - anharrrslbw - Made with HTML, CSS, JS, & PHP </p>
-        </footer>
-    </div>
-    
     <script src="../../scriptabout.js"></script>
 </body>
 </html>

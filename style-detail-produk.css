@@ -32,10 +32,13 @@ html, body{
     padding: 2rem 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
     border-radius: 15px;
     column-gap: 10px;
     align-items: center;
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 .product-div-left{
     padding: 20px;
@@ -60,16 +63,14 @@ html, body{
 }
 .product-name{
     font-size: 26px;
-    margin-bottom: 22px;
+    margin-bottom: 24px;
     font-weight: 700;
     letter-spacing: 1px;
-    opacity: 0.9;
 }
 .product-price{
     font-weight: 700;
-    font-size: 24px;
-    opacity: 0.9;
-    font-weight: 500;
+    font-size: 28px;
+    font-weight: 700;
 }
 .product-kategori{
     display: flex;
@@ -84,7 +85,6 @@ html, body{
 .product-description{
     line-height: 1.5;
     font-weight: 500;
-    opacity: 1;
     margin: 10px 0 15px 0;
     display: flex;
     justify-content: left;
@@ -106,7 +106,7 @@ html, body{
 
 .product-div-right .btn-produk:hover {
     color: #dc3545;
-    background: #d3ece9;
+    background: rgba(255, 255, 255, 0.3);
     border: 1px solid #dc3545;
 }
 

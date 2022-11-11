@@ -15,20 +15,20 @@
     foreach ($data as $user);
     $id_user = $user["id_user"];
 
-    $id_produk = $_SESSION["produk"];
-    $result = mysqli_query( $conn, "SELECT * FROM produk WHERE id_produk = '$id_produk'");
-    $data_produk = [];
-    while ($row = mysqli_fetch_array($result)) {
-        $data_produk[] = $row;
-    }
-    foreach ($data_produk as $produk);
-
     $result = mysqli_query( $conn, "SELECT * FROM pesanan WHERE id_pesanan = '$_SESSION[id_pesanan]'");
     $data_pesanan = [];
     while ($row = mysqli_fetch_array($result)) {
         $data_pesanan[] = $row;
     }
     foreach ($data_pesanan as $pesanan);
+
+    $id_produk = $pesanan["id_produk"];
+    $result = mysqli_query( $conn, "SELECT * FROM produk WHERE id_produk = '$id_produk'");
+    $data_produk = [];
+    while ($row = mysqli_fetch_array($result)) {
+        $data_produk[] = $row;
+    }
+    foreach ($data_produk as $produk);
 
     $jumlah = $_GET["id"];
     $total = $produk["harga"] * $jumlah;
@@ -40,7 +40,7 @@
         $id_produk = $produk["id_produk"];
         $metode_pembayaran = $_POST["metode_pembayaran"];
         $jumlah = $jumlah;
-        $total_harga = $_POST["total"];
+        $total_harga = $total;
         $waktu = date("y-m-d h:i:s");
         $atas_nama = $_POST["atas_nama"];
         $status = "menunggu";
@@ -160,27 +160,6 @@
             </form>
         </div>
     </div>
-
-    <div class="bawah">
-    <!-- footer -->
-        <footer>
-            <div class="footer">
-                <p>
-                    Jangan lupa belanja di AnharZtore, serta follow akun ig saya <a href="https://www.instagram.com/anharrrrrr_/" id="ig"> @anharrrrrr_ </a> 
-                    <br>
-                    Demikian tampilan web Posttest 5 saya, wassalamualaikum warahmatullahi wabarakatuh
-                </p>
-            </div>
-            <div id="kontak">
-                <i class="fa fa-whatsapp"> 085845723207 </i>
-                <i class="fa fa-instagram"> anharrrrrr_ </i>
-                <i class="fa fa-envelope-o"> anharkhoirun@gmail.com </i>
-                <i class="fa fa-github"> Anhar12 </i>
-            </div>
-            <p> @Copyright 2022 - anharrrslbw - Made with HTML, CSS, JS, & PHP </p>
-        </footer>
-    </div>
-        
-    <script src="scriptorder.js"></script>
+    <script src="../scriptorder.js"></script>
 </body>
 </html>

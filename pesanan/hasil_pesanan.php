@@ -136,27 +136,6 @@
             </form>
         </div>
     </div>
-
-    <div class="bawah">
-    <!-- footer -->
-        <footer>
-            <div class="footer">
-                <p>
-                    Jangan lupa belanja di AnharZtore, serta follow akun ig saya <a href="https://www.instagram.com/anharrrrrr_/" id="ig"> @anharrrrrr_ </a> 
-                    <br>
-                    Demikian tampilan web Posttest 5 saya, wassalamualaikum warahmatullahi wabarakatuh
-                </p>
-            </div>
-            <div id="kontak">
-                <i class="fa fa-whatsapp"> 085845723207 </i>
-                <i class="fa fa-instagram"> anharrrrrr_ </i>
-                <i class="fa fa-envelope-o"> anharkhoirun@gmail.com </i>
-                <i class="fa fa-github"> Anhar12 </i>
-            </div>
-            <p> @Copyright 2022 - anharrrslbw - Made with HTML, CSS, JS, & PHP </p>
-        </footer>
-    </div>
-        
     <script src="../scriptorder.js"></script>
 </body>
 </html>

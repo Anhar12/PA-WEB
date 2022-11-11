@@ -36,7 +36,7 @@
                     <li> <a href="" style="color: #FA022E;"> HOME </a></li>
                     <li> <a href="../../produk/list_barang.php"> PRODUCT </a></li>
                     <li> <a href="../../pesanan/pesanan_user.php"> ORDER </a></li>
-                    <li> <a href="../../kontak.php?id=<?php echo $id; ?>"> KONTAK </a></li>
+                    <li> <a href="../../kontak.php?id=<?php echo $id; ?>"> CONTACT </a></li>
                     <li> <a href="profile.php?id=<?php echo $id; ?>"> PROFILE </a></li>
                     <li> <a href="../../logout.php"> LOGOUT </a></li>
                     <li>
@@ -131,23 +131,20 @@
         </div>
         
         <!-- footer -->
-        <footer>
+        <footer class="footerAbout">
             <div class="footer">
-                <p class="best-seller">
-                    Jangan lupa belanja di AnharZtore, serta follow akun ig saya <a href="https://www.instagram.com/anharrrrrr_/" id="ig"> @anharrrrrr_ </a> 
-                    <br>
-                    Demikian tampilan web Posttest 5 saya, wassalamualaikum warahmatullahi wabarakatuh
+                <p>
+                    Jangan lupa belanja di AnharZtore, serta follow akun ig kami <a href="https://www.instagram.com/anharZtore/" id="ig"> @anharZtore </a>
                 </p>
             </div>
-            <div id="kontak">
-                <i class="fa fa-whatsapp"> 085845723207 </i>
-                <i class="fa fa-instagram"> anharrrrrr_ </i>
-                <i class="fa fa-envelope-o"> anharkhoirun@gmail.com </i>
-                <i class="fa fa-github"> Anhar12 </i>
-            </div>
-            <p> @Copyright 2022 - anharrrslbw - Made with HTML, CSS, JS, & PHP </p>
+                <div id="kontak">
+                    <i class="fa fa-whatsapp"> 085845723207 </i>
+                    <i class="fa fa-instagram"> anharZtore </i>
+                    <i class="fa fa-envelope-o"> anharZtore@gmail.com </i>
+                    <i class="fa fa-github"> anharZtore </i>
+                </div>
+                <p> @Copyright 2022 - anharZtore - Made with HTML, CSS, JS, & PHP </p>
         </footer>
-
     </div>
     <script src="../../scriptidx.js"></script>
 </body>

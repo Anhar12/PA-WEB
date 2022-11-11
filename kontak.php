@@ -122,7 +122,7 @@ if (isset($_SESSION["username"])){
                 </ul>
             </div>
         </nav> 
-       <!-- formulir kontak -->
+        <!-- formulir kontak -->
     <section class="contact">
 
       <div class="row">
@@ -148,40 +148,16 @@ if (isset($_SESSION["username"])){
 
 if(isset($_POST['send'])){
 
-   $nama = $_POST['name'];
-   $nama = filter_var($nama, FILTER_SANITIZE_STRING);
-   $email = $_POST['email'];
-   $email = filter_var($email, FILTER_SANITIZE_STRING);
-   $saran = $_POST['msg'];
-   $saran = filter_var($saran, FILTER_SANITIZE_STRING);
+    $nama = $_POST['name'];
+    $nama = filter_var($nama, FILTER_SANITIZE_STRING);
+    $email = $_POST['email'];
+    $email = filter_var($email, FILTER_SANITIZE_STRING);
+    $saran = $_POST['msg'];
+    $saran = filter_var($saran, FILTER_SANITIZE_STRING);
 
-   $result = mysqli_query($conn, "INSERT INTO `saran` VALUES('','$id','$nama','$email','$saran')");
-
-
+    $result = mysqli_query($conn, "INSERT INTO `saran` VALUES('','$id','$nama','$email','$saran')");
 }
-
 ?>
-<!-- formulir kontak -->
-            <!-- footer -->
-            <footer>
-                <div class="footer">
-                    <p>
-                        Jangan lupa belanja di AnharZtore, serta follow akun ig saya <a href="https://www.instagram.com/anharrrrrr_/" id="ig"> @anharrrrrr_ </a>
-                        <br>
-                        Demikian tampilan web Posttest 5 saya, wassalamualaikum warahmatullahi wabarakatuh
-                    </p>
-                </div>
-                <div id="kontak">
-                    <i class="fa fa-whatsapp"> 085845723207 </i>
-                    <i class="fa fa-instagram"> anharrrrrr_ </i>
-                    <i class="fa fa-envelope-o"> anharkhoirun@gmail.com </i>
-                    <i class="fa fa-github"> Anhar12 </i>
-                </div>
-                <p> @Copyright 2022 - anharrrslbw - Made with HTML, CSS, JS, & PHP </p>
-            </footer>
-
-        </div>
-    </div>
     <script src="scriptidx.js"></script>
 </body>
 

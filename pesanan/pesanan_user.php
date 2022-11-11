@@ -194,7 +194,6 @@
                                 </a>
                             </button>
                             <button>
-                            <!-- <a href="../pesanan/hapus.php?id=<?php echo $pesan['id_pesanan']; ?>" class = "dlt"> <i class="material-icons" style="font-size:26px;color:red">delete</i> </a> </td> -->
                                 <a href="../pesanan/hapus.php?id=<?php echo $pesan['id_pesanan']; ?>" 
                                     class="dlt"> 
                                     <i class="material-icons" 
@@ -213,139 +212,8 @@
                     }
                 ?>
             </div>
-            <!-- <div class="boxPesanan">
-                <div class="pesanan">
-                    <img src="../img/iPhone 14 Pro Max.png" alt="">
-                    <div class="deskripsi">
-                        <p style="font-weight: 600;">Xiaomi Poco X4 Pro 5G</p>
-                        <p>Jumlah : 4</p>
-                        <p>Total Harga</p>
-                        <p style="font-weight: 600;">Rp 2.000.000</p>
-                        <p style="font-weight: 600;
-                                font-size: 15px;
-                                letter-spacing: 1px;
-                                margin-top: 5px;
-                                padding-top: 2px;
-                                padding-bottom: 5px;
-                                border: 1px solid transparent;
-                                border-radius: 8px; 
-                                width: 90px;
-                                background: #ffc107;
-                                color: #000000;
-                                text-align: center;"
-                                >Menunggu</p>
-                        <div class="action">
-                            <button>Edit</button>
-                            <button>Hapus</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="pesanan">
-                    <img src="../img/iPhone 14 Pro Max.png" alt="">
-                    <div class="deskripsi">
-                        <p style="font-weight: 600;">Vivo V25 Pro Max</p>
-                        <p>Jumlah : 4</p>
-                        <p>Total Harga</p>
-                        <p style="font-weight: 600;">Rp 2.000.000</p>
-                        <p style="font-weight: 600;
-                            font-size: 15px;
-                            letter-spacing: 2px;
-                            margin-top: 5px;
-                            padding-top: 2px;
-                            padding-bottom: 5px;
-                            border: 1px solid transparent;
-                            border-radius: 8px; 
-                            width: 60px;
-                            background: #dc3545;
-                            text-align: center;"
-                            >Gagal</p>
-                        <div class="action">
-                            <button>Edit</button>
-                            <button>Hapus</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="pesanan">
-                    <img src="../img/iPhone 14 Pro Max.png" alt="">
-                    <div class="deskripsi">
-                        <p style="font-weight: 600;">Vivo V25 Pro Max</p>
-                        <p>Jumlah : 4</p>
-                        <p>Total Harga</p>
-                        <p style="font-weight: 600;">Rp 2.000.000</p>
-                        <p style="font-weight: 600;
-                            font-size: 15px;
-                            letter-spacing: 2px;
-                            margin-top: 5px;
-                            padding-top: 2px;
-                            padding-bottom: 5px;
-                            border: 1px solid transparent;
-                            border-radius: 8px; 
-                            width: 75px;
-                            background: #28a745;
-                            text-align: center;"
-                            >Berhasil</p>
-                        <div class="action">
-                            <button>Edit</button>
-                            <button>Hapus</button>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <!-- <table border="1">
-                <tr height="50px">
-                    <th> No. </th>
-                    <th> Nama </th>
-                    <th> No. Telp </th>
-                    <th> Nama HP </th>
-                    <th> Jumlah </th>
-                    <th> Alamat </th>
-                    <th> Pembayaran </th>
-                    <th> Atas Nama </th>
-                    <th> Keterangan </th>
-                    <th> Status </th>
-                    <th colspan="2"> Kelola </th>
-                </tr>
-                
-                <tr>
-                    <td> <?php echo $i ;?> </td>
-                    <td> <?php echo ucwords($pesan['username']) ;?> </td>
-                    <td> <?php echo $pesan['no_hp'] ;?> </td>
-                    <td> <?php echo $pesan['nama'] ;?> </td>
-                    <td> <?php echo $pesan['jumlah'] ;?> </td>
-                    <td> <?php echo $pesan['alamat'] ;?> </td>
-                    <td> <?php echo $pesan['metode_pembayaran'] ;?> </td>
-                    <td> <?php echo $pesan['atas_nama'] ;?> </td>
-                    <td> <?php echo $pesan['keterangan_waktu'] ;?> </td>
-                    <td> <?php echo ucwords($pesan['status']) ;?> </td>
-                    <td width="4%"> <a href="../pesanan/edit_pesanan_user.php?id=<?php echo $pesan['id_pesanan']; ?>" class="updt"> <i class="material-icons" style="font-size:26px;color:green">update</i> </td> </a>
-                    <td width="4%"> <a href="../pesanan/hapus.php?id=<?php echo $pesan['id_pesanan']; ?>" class = "dlt"> <i class="material-icons" style="font-size:26px;color:red">delete</i> </a> </td>
-                </tr>
-            </table> -->
         </div>
-
     </div>
-
-    <!-- footer -->
-    <div class="bawah">
-        <footer class="footerAbout">
-            <div class="footer">
-                <p>
-                    Jangan lupa belanja di AnharZtore, serta follow akun ig saya <a href="https://www.instagram.com/anharrrrrr_/" id="ig"> @anharrrrrr_ </a> 
-                    <br>
-                    Demikian tampilan web Posttest 5 saya, wassalamualaikum warahmatullahi wabarakatuh
-                </p>
-            </div>
-            <div id="kontak">
-                <i class="fa fa-whatsapp"> 085845723207 </i>
-                <i class="fa fa-instagram"> anharrrrrr_ </i>
-                <i class="fa fa-envelope-o"> anharkhoirun@gmail.com </i>
-                <i class="fa fa-github"> Anhar12 </i>
-            </div>
-            <p> @Copyright 2022 - anharrrslbw - Made with HTML, CSS, JS, & PHP </p>
-        </footer>
-    </div>
-    
     <script src="../scriptabout.js"></script>
 </body>
 </html>

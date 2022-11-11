@@ -58,6 +58,15 @@ if ($_SESSION["priv"] != "admin") {
           $result = mysqli_query($conn, "SELECT * FROM produk WHERE
                     nama LIKE '%$keyword%' OR
                     harga LIKE '%$keyword%'");
+          if (mysqli_num_rows($result) === 0){
+            echo "<p
+              style='
+                  color: #ffffff;
+                  font-size: 24px;
+                  width: 100%;
+              '> 
+              Oops, Produk Tidak Ditemukan </p>";
+          }
         }
         else {
           $result = mysqli_query($conn, "SELECT * FROM produk");
@@ -84,73 +93,20 @@ if ($_SESSION["priv"] != "admin") {
   </div>
   
   <div class="bawah">
-    <!-- review -->
-    <div class="review">
-      <h1> Review Dari Para Customer Kami </h1>
-      <div class="baris">
-        <div class="kolomReview">
-          <img src="../assets/rizky.jpg">
-          <div>
-            <p>
-              Tempatnya trusted, adminnya fast respon, terbaeklah pokonya, never gonna give u up
-            </p>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-            <h2> Rizky Slebew </h2>
-          </div>
-        </div>
-        <div class="kolomReview">
-          <img src="../assets/rangga.jpg">
-          <div>
-            <p>
-              Saya awalnya dapat ingfo dari andri, tempatnya trusted, sayangnya gaada gratis rokok
-            </p>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
-            <i class="fa fa-star-o"></i>
-            <h2> Rangga Banyak tanya </h2>
-          </div>
-        </div>
-      </div>
-      <div class="baris2Review">
-        <div class="kolomReview">
-          <img src="../assets/terkadang.jpg">
-          <div>
-            <p>
-              Awalnya saya coba coba cukur mullet, eh ternyata membuatku kepelet, bintang 5 deh
-            </p>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <h2> Terkadang Mullet </h2>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- footer -->
     <footer>
       <div class="footer">
-        <p class="best-seller">
-          Jangan lupa belanja di AnharZtore, serta follow akun ig saya <a href="https://www.instagram.com/anharrrrrr_/" id="ig"> @anharrrrrr_ </a>
-          <br>
-          Demikian tampilan web Posttest 5 saya, wassalamualaikum warahmatullahi wabarakatuh
-        </p>
+          <p>
+              Jangan lupa belanja di AnharZtore, serta follow akun ig kami <a href="https://www.instagram.com/anharZtore/" id="ig"> @anharZtore </a>
+          </p>
       </div>
       <div id="kontak">
-        <i class="fa fa-whatsapp"> 085845723207 </i>
-        <i class="fa fa-instagram"> anharrrrrr_ </i>
-        <i class="fa fa-envelope-o"> anharkhoirun@gmail.com </i>
-        <i class="fa fa-github"> Anhar12 </i>
+          <i class="fa fa-whatsapp"> 085845723207 </i>
+          <i class="fa fa-instagram"> anharZtore </i>
+          <i class="fa fa-envelope-o"> anharZtore@gmail.com </i>
+          <i class="fa fa-github"> anharZtore </i>
       </div>
-      <p> @Copyright 2022 - anharrrslbw - Made with HTML, CSS, JS, & PHP </p>
+      <p> @Copyright 2022 - anharZtore - Made with HTML, CSS, JS, & PHP </p>
     </footer>
 
   </div>
