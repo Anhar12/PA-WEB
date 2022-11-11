@@ -77,74 +77,74 @@
                     }
                 ?>
             </div>
-        </div> 
 
     <!-- review -->
-        <div class="review">
-            <h1> Review Dari Para Customer Kami </h1>
-            <div class="baris">
-                <div class="kolomReview">
-                    <img src="../../assets/rizky.jpg">
-                    <div>
-                        <p>
-                            Tempatnya trusted, adminnya fast respon, terbaeklah pokonya, never gonna give u up
-                        </p>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star-half-o" ></i>
-                        <h2> Rizky Slebew </h2>
+            <div class="review">
+                <h1> Review Dari Para Customer Kami </h1>
+                <div class="baris">
+                    <div class="kolomReview">
+                        <img src="../../assets/rizky.jpg">
+                        <div>
+                            <p>
+                                Tempatnya trusted, adminnya fast respon, terbaeklah pokonya, never gonna give u up
+                            </p>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-half-o" ></i>
+                            <h2> Rizky Slebew </h2>
+                        </div>
+                    </div>
+                    <div class="kolomReview">
+                        <img src="../../assets/rangga.jpg">
+                        <div>
+                            <p>
+                                Saya awalnya dapat ingfo dari andri, tempatnya trusted, sayangnya gaada gratis rokok
+                            </p>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-o" ></i>
+                            <i class="fa fa-star-o" ></i>
+                            <h2> Rangga Banyak tanya </h2>
+                        </div>
                     </div>
                 </div>
-                <div class="kolomReview">
-                    <img src="../../assets/rangga.jpg">
-                    <div>
-                        <p>
-                            Saya awalnya dapat ingfo dari andri, tempatnya trusted, sayangnya gaada gratis rokok
-                        </p>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star-o" ></i>
-                        <i class="fa fa-star-o" ></i>
-                        <h2> Rangga Banyak tanya </h2>
+                <div class="baris2Review">
+                    <div class="kolomReview">
+                        <img src="../../assets/terkadang.jpg">
+                        <div>
+                            <p>
+                                Awalnya saya coba coba cukur mullet, eh ternyata membuatku kepelet, bintang 5 deh
+                            </p>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <h2> Terkadang Mullet </h2>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="baris2Review">
-                <div class="kolomReview">
-                    <img src="../../assets/terkadang.jpg">
-                    <div>
-                        <p>
-                            Awalnya saya coba coba cukur mullet, eh ternyata membuatku kepelet, bintang 5 deh
-                        </p>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <h2> Terkadang Mullet </h2>
+
+            <!-- footer -->
+            <footer class="footerAbout">
+                <div class="footer">
+                    <p>
+                        Jangan lupa belanja di AnharZtore, serta follow akun ig kami <a href="https://www.instagram.com/anharZtore/" id="ig"> @anharZtore </a>
+                    </p>
+                </div>
+                    <div id="kontak">
+                        <i class="fa fa-whatsapp"> 085845723207 </i>
+                        <i class="fa fa-instagram"> anharZtore </i>
+                        <i class="fa fa-envelope-o"> anharZtore@gmail.com </i>
+                        <i class="fa fa-github"> anharZtore </i>
                     </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- footer -->
-        <footer class="footerAbout">
-            <div class="footer">
-                <p>
-                    Jangan lupa belanja di AnharZtore, serta follow akun ig kami <a href="https://www.instagram.com/anharZtore/" id="ig"> @anharZtore </a>
-                </p>
-            </div>
-                <div id="kontak">
-                    <i class="fa fa-whatsapp"> 085845723207 </i>
-                    <i class="fa fa-instagram"> anharZtore </i>
-                    <i class="fa fa-envelope-o"> anharZtore@gmail.com </i>
-                    <i class="fa fa-github"> anharZtore </i>
-                </div>
-                <p> @Copyright 2022 - anharZtore - Made with HTML, CSS, JS, & PHP </p>
-        </footer>
+                    <p> @Copyright 2022 - anharZtore - Made with HTML, CSS, JS, & PHP </p>
+            </footer>
+        </div> 
     </div>
     <script src="../../scriptidx.js"></script>
 </body>
