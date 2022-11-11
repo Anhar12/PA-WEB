@@ -26,6 +26,74 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        .boxPesanan {
+            padding-top: 20px;
+            margin: auto;
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .pesanan {
+            margin: auto;
+            margin-bottom: 20px;
+            width: 29%;
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            color: #ffffff;
+            border-radius: 13px;
+        }
+        .deskripsi {
+            margin: 0;
+            margin-left: 10px;
+            display: flex;
+            text-align: left;
+            flex-direction: column;
+
+        }
+        .pesanan p {
+            padding: 0;
+            margin-bottom: 3px;
+            font-weight: 400;
+            border: 1px solid transparent;
+        }
+        .action {
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .action button {
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 0;
+            width: 47%;
+            padding: 0;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(3px);
+            color: #ffffff;
+        }
+        .pesanan .status {
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin-top: 5px;
+            padding-top: 2px;
+            padding-bottom: 5px;
+            border: 1px solid transparent;
+            border-radius: 8px; 
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <!-- header -->
@@ -37,6 +105,7 @@
                     <li> <a href="../pengguna/user/user.php"> HOME </a></li>
                     <li> <a href="../produk/list_barang.php"> PRODUCT </a></li>
                     <li> <a href="" style="color: #fa022e;"> ORDER </a></li>
+                    <li> <a href='../kontak.php?id=<?php echo $id ?>'> KONTAK </a></li>
                     <li> <a href="../pengguna/user/profile.php?id=<?php echo $id; ?>"> PROFILE </a></li>
                     <li> <a href="../logout.php"> LOGOUT </a></li>
                     <li>
@@ -56,7 +125,163 @@
                 <button><a href="../pengguna/user/user.php">Kembali</a> </button>
                 <button><a href="../produk/list_barang.php">Tambah</a> </button>
             </div>
-            <table border="1">
+            
+            <div class="boxPesanan">
+                <?php 
+                    $result = mysqli_query( $conn, 
+                                "SELECT * FROM pesanan 
+                                INNER JOIN user ON pesanan.id_user = user.id_user
+                                INNER JOIN produk ON pesanan.id_produk = produk.id_produk
+                                WHERE pesanan.id_user = '$id'");
+                    $pesanan = [];
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $pesanan[] = $row;
+                    }
+                    foreach ($pesanan as $pesan):
+                ?>
+                <div class="pesanan">
+                    <img src="../img/<?php echo $pesan['gambar'];?>" alt="Gambar Produk">
+                    <div class="deskripsi">
+                        <p style="font-weight: 600;"><?php echo ucwords($pesan['nama']);?></p>
+                        <p>Jumlah : <?php echo $pesan['jumlah'];?></p>
+                        <p>Total Harga</p>
+                        <p style="font-weight: 600;">Rp <?php echo number_format($pesan['total_harga'], 0, ".", ".") ?></p>
+                        <?php 
+                            $status = ucwords($pesan['status']);
+                            if ($pesan['status'] == "berhasil"){
+                                echo "<p class='status'
+                                style='
+                                    width: 90px;
+                                    background: #28a745;'
+                                >$status</p>";
+                            }
+                            else if ($pesan['status'] == "gagal"){
+                                echo "<p class='status'
+                                style='
+                                    width: 70px;
+                                    background: #dc3545;'
+                                >$status</p>";
+                            }
+                            else {
+                                echo "<p class='status' 
+                                style='
+                                    width: 105px;
+                                    background: #ffc107;
+                                    color: #000000;'
+                                >$status</p>";
+                            }
+                        ?>
+                        <div class="action">
+                            <button>
+                                <a href="../pesanan/edit_pesanan_user.php?id=<?php echo $pesan['id_pesanan']; ?>" 
+                                class="updt"> 
+                                    <i class="material-icons" 
+                                    style=" padding: 0; 
+                                            font-size:32px;
+                                            color:green;
+                                            margin-top: 2px"
+                                    >update</i>
+                                </a>
+                            </button>
+                            <button>
+                            <!-- <a href="../pesanan/hapus.php?id=<?php echo $pesan['id_pesanan']; ?>" class = "dlt"> <i class="material-icons" style="font-size:26px;color:red">delete</i> </a> </td> -->
+                                <a href="../pesanan/hapus.php?id=<?php echo $pesan['id_pesanan']; ?>" 
+                                    class="dlt"> 
+                                    <i class="material-icons" 
+                                    style=" padding: 0; 
+                                            font-size:32px;
+                                            color:red;
+                                            margin-top: 2px"
+                                    >delete</i>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <?php 
+                    endforeach;
+                ?>
+            </div>
+            <!-- <div class="boxPesanan">
+                <div class="pesanan">
+                    <img src="../img/iPhone 14 Pro Max.png" alt="">
+                    <div class="deskripsi">
+                        <p style="font-weight: 600;">Xiaomi Poco X4 Pro 5G</p>
+                        <p>Jumlah : 4</p>
+                        <p>Total Harga</p>
+                        <p style="font-weight: 600;">Rp 2.000.000</p>
+                        <p style="font-weight: 600;
+                                font-size: 15px;
+                                letter-spacing: 1px;
+                                margin-top: 5px;
+                                padding-top: 2px;
+                                padding-bottom: 5px;
+                                border: 1px solid transparent;
+                                border-radius: 8px; 
+                                width: 90px;
+                                background: #ffc107;
+                                color: #000000;
+                                text-align: center;"
+                                >Menunggu</p>
+                        <div class="action">
+                            <button>Edit</button>
+                            <button>Hapus</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pesanan">
+                    <img src="../img/iPhone 14 Pro Max.png" alt="">
+                    <div class="deskripsi">
+                        <p style="font-weight: 600;">Vivo V25 Pro Max</p>
+                        <p>Jumlah : 4</p>
+                        <p>Total Harga</p>
+                        <p style="font-weight: 600;">Rp 2.000.000</p>
+                        <p style="font-weight: 600;
+                            font-size: 15px;
+                            letter-spacing: 2px;
+                            margin-top: 5px;
+                            padding-top: 2px;
+                            padding-bottom: 5px;
+                            border: 1px solid transparent;
+                            border-radius: 8px; 
+                            width: 60px;
+                            background: #dc3545;
+                            text-align: center;"
+                            >Gagal</p>
+                        <div class="action">
+                            <button>Edit</button>
+                            <button>Hapus</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="pesanan">
+                    <img src="../img/iPhone 14 Pro Max.png" alt="">
+                    <div class="deskripsi">
+                        <p style="font-weight: 600;">Vivo V25 Pro Max</p>
+                        <p>Jumlah : 4</p>
+                        <p>Total Harga</p>
+                        <p style="font-weight: 600;">Rp 2.000.000</p>
+                        <p style="font-weight: 600;
+                            font-size: 15px;
+                            letter-spacing: 2px;
+                            margin-top: 5px;
+                            padding-top: 2px;
+                            padding-bottom: 5px;
+                            border: 1px solid transparent;
+                            border-radius: 8px; 
+                            width: 75px;
+                            background: #28a745;
+                            text-align: center;"
+                            >Berhasil</p>
+                        <div class="action">
+                            <button>Edit</button>
+                            <button>Hapus</button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <table border="1">
                 <tr height="50px">
                     <th> No. </th>
                     <th> Nama </th>
@@ -70,18 +295,7 @@
                     <th> Status </th>
                     <th colspan="2"> Kelola </th>
                 </tr>
-                <?php 
-                    $result = mysqli_query( $conn, "SELECT * FROM pesanan 
-                                        INNER JOIN user ON pesanan.id_user = user.id_user
-                                        INNER JOIN produk ON pesanan.id_produk = produk.id_produk
-                                        WHERE pesanan.id_user = '$id'");
-                    $pesanan = [];
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $pesanan[] = $row;
-                    }
-                    $i = 1; 
-                    foreach ($pesanan as $pesan):
-                ?>
+                
                 <tr>
                     <td> <?php echo $i ;?> </td>
                     <td> <?php echo ucwords($pesan['username']) ;?> </td>
@@ -96,11 +310,7 @@
                     <td width="4%"> <a href="../pesanan/edit_pesanan_user.php?id=<?php echo $pesan['id_pesanan']; ?>" class="updt"> <i class="material-icons" style="font-size:26px;color:green">update</i> </td> </a>
                     <td width="4%"> <a href="../pesanan/hapus.php?id=<?php echo $pesan['id_pesanan']; ?>" class = "dlt"> <i class="material-icons" style="font-size:26px;color:red">delete</i> </a> </td>
                 </tr>
-                <?php 
-                    $i++; 
-                    endforeach;
-                ?>
-            </table>
+            </table> -->
         </div>
 
     </div>

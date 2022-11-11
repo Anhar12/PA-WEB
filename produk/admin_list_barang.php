@@ -57,10 +57,7 @@ if ($_SESSION["priv"] != "admin") {
           $keyword = $_GET["cari"];
           $result = mysqli_query($conn, "SELECT * FROM produk WHERE
                     nama LIKE '%$keyword%' OR
-                    harga LIKE '%$keyword%' OR
-                    kategori LIKE '%$keyword%' OR
-                    deskripsi LIKE '%$keyword%' OR
-                    stock LIKE '%$keyword%'");
+                    harga LIKE '%$keyword%'");
         }
         else {
           $result = mysqli_query($conn, "SELECT * FROM produk");

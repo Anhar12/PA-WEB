@@ -28,7 +28,6 @@ require 'koneksi.php';
                     <li> <a href="produk/list_barang.php"> PRODUCT </a></li>
                     <li> <a href="about.php"> ABOUT </a></li>
                     <li> <a href="login.php"> LOGIN </a></li>
-                    <li></li>
                     <li>
                         <label>
                             <input type="checkbox" class="checkbox" id="tombol">
