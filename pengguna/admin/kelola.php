@@ -51,20 +51,22 @@
 
     <!-- footer -->
     <div class="bawah">
-        <footer class="footerAbout">
-            <div class="footer">
-                    <p>
-                        Jangan lupa belanja di AnharZtore, serta follow akun ig kami <a href="https://www.instagram.com/anharZtore/" id="ig"> @anharZtore </a>
-                    </p>
-                </div>
-                <div id="kontak">
-                    <i class="fa fa-whatsapp"> 085845723207 </i>
-                    <i class="fa fa-instagram"> anharZtore </i>
-                    <i class="fa fa-envelope-o"> anharZtore@gmail.com </i>
-                    <i class="fa fa-github"> anharZtore </i>
-                </div>
-                <p> @Copyright 2022 - anharZtore - Made with HTML, CSS, JS, & PHP </p>
-        </footer>
+        <div class="container" id="product">
+            <footer class="footerAbout">
+                <div class="footer">
+                        <p>
+                            Jangan lupa belanja di AnharZtore, serta follow akun ig kami <a href="https://www.instagram.com/anharZtore/" id="ig"> @anharZtore </a>
+                        </p>
+                    </div>
+                    <div id="kontak">
+                        <i class="fa fa-whatsapp"> 085845723207 </i>
+                        <i class="fa fa-instagram"> anharZtore </i>
+                        <i class="fa fa-envelope-o"> anharZtore@gmail.com </i>
+                        <i class="fa fa-github"> anharZtore </i>
+                    </div>
+                    <p> @Copyright 2022 - anharZtore - Made with HTML, CSS, JS, & PHP </p>
+            </footer>
+        </div>
     </div>
     
     <script src="../../scriptabout.js"></script>
