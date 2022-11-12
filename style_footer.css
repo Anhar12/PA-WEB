@@ -133,3 +133,14 @@ footer .container-footer .contact li a{
         width: 80%;
     }
 }
+@media (max-width: 415px){
+    footer .container-footer .contact li{
+        margin: 0;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+    footer .container-footer .contact li a{
+        font-size: 12px;
+    }
+}
