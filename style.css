@@ -21,7 +21,7 @@
     --kolomreview-color: #e9f9f7;
     --preview-color: black;
     --fareview-color: rgb(6, 15, 114);
-    --form-color:linear-gradient(rgba(180,180,180,0.6871790952709209) 0%, rgba(180,180,180,0.7123891793045343));
+    --form-color: rgba(255, 255, 255, 0.3);
     --tampil-color: linear-gradient(rgba(17,100,98,1) 0%, rgba(15,13,106,1) 100%);
     --form-shadow: 0px 0px 5px white;
 }
@@ -38,7 +38,7 @@
     --kolomreview-color: #810606;
     --preview-color: white;
     --fareview-color: rgb(12, 30, 232);
-    --form-color: radial-gradient(circle, rgba(126,126,126,0.4572099103313201) 0%, rgba(126,126,126,0.5300390419839811) 0%);
+    --form-color: rgba(0, 0, 0, 0.3);
     --tampil-color: linear-gradient( rgba(7,78,76,0.807349966353729) 0%, rgba(8,6,78,0.8269578094909839) 100%);
     --form-shadow: 0px 0px 5px black;
 }
@@ -549,6 +549,8 @@ footer .fa {
     justify-content: center;
     align-items: center;
     background: var(--form-color);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(5px);
     max-width: 550px;
     max-height: 700px;
     width: 100%;
@@ -1210,7 +1212,6 @@ table a{
     .order-detail {
         font-size: 9px;
         width: 250px;
-        
     }
     .detail {
         padding-top: 5px;

@@ -46,7 +46,6 @@ if (isset($_SESSION["username"])){
               else {
                 echo "<li> <a href='../index.php'> HOME </a></li>";
                 echo "<li> <a href='list_barang.php' style='color: #FA022E;'> PRODUCT </a></li>";
-                echo "<li> <a href='../about.php'> ABOUT </a></li>";
                 echo "<li> <a href='../login.php'> LOGIN </a></li>";
               }
           ?>
