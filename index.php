@@ -13,6 +13,7 @@ require 'koneksi.php';
     <link rel="icon" href="assets/AZ.ico">
     <title>AnharZtore</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_footer.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -26,7 +27,6 @@ require 'koneksi.php';
                 <ul>
                     <li> <a href="" style="color: #FA022E;"> HOME </a></li>
                     <li> <a href="produk/list_barang.php"> PRODUCT </a></li>
-                    <li> <a href="about.php"> ABOUT </a></li>
                     <li> <a href="login.php"> LOGIN </a></li>
                     <li>
                         <label>
@@ -116,27 +116,12 @@ require 'koneksi.php';
                     </div>
                 </div>
             </div>
-
-            <!-- footer -->
-            <footer>
-                <div class="footer">
-                    <p>
-                        Jangan lupa belanja di AnharZtore, serta follow akun ig saya <a href="https://www.instagram.com/anharrrrrr_/" id="ig"> @anharrrrrr_ </a>
-                        <br>
-                        Demikian tampilan web Posttest 5 saya, wassalamualaikum warahmatullahi wabarakatuh
-                    </p>
-                </div>
-                <div id="kontak">
-                    <i class="fa fa-whatsapp"> 085845723207 </i>
-                    <i class="fa fa-instagram"> anharrrrrr_ </i>
-                    <i class="fa fa-envelope-o"> anharkhoirun@gmail.com </i>
-                    <i class="fa fa-github"> Anhar12 </i>
-                </div>
-                <p> @Copyright 2022 - anharrrslbw - Made with HTML, CSS, JS, & PHP </p>
-            </footer>
-
         </div>
     </div>
+    
+    <!-- footer -->
+    <?php include 'footer.php'; ?>
+    
     <script src="scriptidx.js"></script>
 </body>
 
