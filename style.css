@@ -828,7 +828,42 @@ table a{
 }
 
 /* media query*/
+@media screen and (max-width: 1200px){
+    .produk {
+        margin: 10px;
+        width: 20%;
+    }
+    .boxPesanan .pesanan{
+        width: 30%;
+    }
+    .boxPesanan img{
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 950px){
+    .boxPesanan .pesanan{
+        width: 40%;
+    }
+    .boxPesanan img{
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 915px){
+    .navbar ul li{
+        padding: 10px 10px;
+    }
+    .produk {
+        margin: 20px;
+        width: 25%;
+    }
+}
+
 @media screen and (max-width: 700px){
+    body{
+        width: 100%;
+    }
     .bawah{
         padding-top: 10px;
     }
@@ -836,6 +871,7 @@ table a{
         min-height: 500px;
     }
     #logo {
+        margin: 5px;
         font-size: 26px;
     }
     nav{
@@ -861,11 +897,10 @@ table a{
     }
     .search input {
         font-size: 9px;
-        height: 8px;
     }
     .search .searching{
         font-size: 12px;
-        padding: 9px;
+        padding: 10px;
     }
     .crud .anu_search{
         width: 150px;
@@ -929,7 +964,7 @@ table a{
         padding: 5px;
     }
     .crud .btn-kelola{
-        margin-left: 20px;
+        justify-content: space-between;
     }
     .crud .btn-kelola button{
         width: 100px;
@@ -1029,19 +1064,40 @@ table a{
         margin: 0;
     }
     .boxPesanan .pesanan{
-        width: 50%;
+        width: 60%;
     }
     .boxPesanan img{
         width: 45%;
     }
 }
 
+@media screen and (max-width: 550px){
+    #logo{
+        margin: 2px;
+        font-size: 20px;
+    }
+    .navbar ul li{
+        padding: 4px 4px;    
+    }
+    .navbar ul li a{
+        font-size: 10px;
+    }
+    .produk {
+        margin: 10px;
+        width: 40%;
+    }
+}
+
 @media screen and (max-width: 420px){
+    body{
+        width: 100%;
+    }
     #logo {
+        margin: 5px;
         font-size: 14px;
     }
     .atas{
-        min-height: 350px;
+        min-height: 400px;
         padding-bottom: 20px;
     }
     .bawah{
@@ -1144,8 +1200,7 @@ table a{
         padding: 5px;
     }
     .crud .btn-kelola{
-        margin-bottom: 5px;
-        margin-left: 20px;
+        justify-content: space-between;
     }
     .crud .btn-kelola-admin{
         margin-bottom: 5px;
@@ -1174,13 +1229,17 @@ table a{
         width: 16px;
     }
     .form {
-        padding-top: 0;
-        margin-top: 20px;
-        width: 40%;
-        min-height: 370px;
+        position: absolute;
+        top: 15%;
+        left: 12%;
+        width: 60%;
+        min-height: 250px;
     }
     .form .input{
         width: 95%;
+    }
+    .form .input select{
+        font-size: 9px;
     }
     .form textarea{
         width: 140%;
