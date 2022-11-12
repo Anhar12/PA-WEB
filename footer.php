@@ -59,5 +59,8 @@
             </div>
         </div>
     </footer>
+    <div class="copyright">
+        <p> Copyright © 2022 CS Smartphone </p>
+    </div>
 </body>
 </html>
