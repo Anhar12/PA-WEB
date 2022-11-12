@@ -21,7 +21,7 @@ footer{
     width: 100%;
     height: auto;
     background: #212529;
-    padding: 20px ;
+    padding: 30px ;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -113,4 +113,23 @@ footer .container-footer .contact li a{
 
 #tel2{
     margin-left: 18px;
+}
+
+.copyright{
+    width: 100%;
+    background: #111;
+    color: #fff;
+    padding: 5px;
+    font-family: 'Oswald';
+    text-align: center;
+}
+
+@media (max-width: 960px)  {
+    footer .container-footer{
+        flex-direction: column;
+        align-items: center;
+    }
+    footer .container-footer .sec.about{
+        width: 80%;
+    }
 }
