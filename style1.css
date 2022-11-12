@@ -140,7 +140,7 @@ input[type="submit"]:hover{
     transition: 0.5s;
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 700px) {
     .atas{
         height: 850px;
     }
@@ -151,6 +151,22 @@ input[type="submit"]:hover{
     .login {
         position: absolute;
         top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+    }
+}
+@media screen and (max-width: 415px) {
+    .atas{
+        height: 850px;
+    }
+    #logo {
+        margin-top: 50px;
+        width: 400px;
+    }
+    .login {
+        position: absolute;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 80%;
