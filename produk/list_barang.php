@@ -108,7 +108,7 @@ if (isset($_SESSION["username"])){
       </div>
     </div>
   </div>
-
+  
   <!--footer -->
   <?php include '../footer.php'; ?>
   <script src="../scriptidx.js"></script>

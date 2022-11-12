@@ -47,11 +47,7 @@
                 <button> <a href="kelola-barang.php"> Kelola Data Barang </a> </button>
             </div>
         </div>
-
     </div>
-
-    <!-- footer -->
-    <?php include'../../footer.php' ?>
     <script src="../../scriptabout.js"></script>
 </body>
 </html>

@@ -76,7 +76,6 @@ if ($_SESSION["priv"] != "admin") {
           echo "<div  class='produk' 
                       style='
                           background: rgba(255, 255, 255, 0.25);'>";
-          // echo "<a href='../detail-produk.php?id=$row[id_produk]'><img src='../img/Nothing Phone 1.png' alt='Gambar Produk'></a>";
           echo "<a href='../detail-produk.php?id=$row[id_produk]'><img src='../img/$row[gambar]' alt='Gambar Produk'></a>";
           echo "<div  class='deskripsi-produk' 
                       style='
