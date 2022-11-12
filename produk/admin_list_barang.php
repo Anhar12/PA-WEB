@@ -94,7 +94,7 @@ if ($_SESSION["priv"] != "admin") {
   </div>
   
   <!-- footer -->
-  <?php include'../footer.php' ?>
+  <?php include '../footer.php'; ?>
   
   <script src="../scriptidx.js"></script>
 </body>

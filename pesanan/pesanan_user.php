@@ -104,7 +104,7 @@
                     <li> <a href="../pengguna/user/user.php"> HOME </a></li>
                     <li> <a href="../produk/list_barang.php"> PRODUCT </a></li>
                     <li> <a href="" style="color: #fa022e;"> ORDER </a></li>
-                    <li> <a href='../kontak.php?id=<?php echo $id ?>'> KONTAK </a></li>
+                    <li> <a href='../kontak.php?id=<?php echo $id ?>'> CONTACT </a></li>
                     <li> <a href="../pengguna/user/profile.php?id=<?php echo $id; ?>"> PROFILE </a></li>
                     <li> <a href="../logout.php"> LOGOUT </a></li>
                     <li>

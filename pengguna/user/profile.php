@@ -88,7 +88,7 @@
                     <li> <a href="user.php"> HOME </a></li>
                     <li> <a href="../../produk/list_barang.php"> PRODUCT </a></li>
                     <li> <a href="../../pesanan/pesanan_user.php"> ORDER </a></li>
-                    <li> <a href="../../kontak.php?id=<?php echo $id; ?>"> KONTAK </a></li>
+                    <li> <a href="../../kontak.php?id=<?php echo $id; ?>"> CONTACT </a></li>
                     <li> <a href="" style="color: #fa022e;"> PROFILE </a></li>
                     <li> <a href="../../logout.php"> LOGOUT </a></li>
                     <li>

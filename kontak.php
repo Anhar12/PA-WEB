@@ -108,7 +108,7 @@ if (isset($_SESSION["username"])){
                     echo "<li> <a href='pengguna/user/user.php'> HOME </a></li>";
                     echo "<li> <a href='produk/list_barang.php' '> PRODUCT </a></li>";
                     echo "<li> <a href='pesanan/pesanan_user.php'> ORDER </a></li>";
-                    echo "<li> <a href='kontak.php' style='color: #FA022E;'> KONTAK </a></li>";
+                    echo "<li> <a href='kontak.php' style='color: #FA022E;'> CONTACT </a></li>";
                     echo "<li> <a href='pengguna/user/profile.php?id= $id'> PROFILE </a></li>";
                     echo "<li> <a href='logout.php'> LOGOUT </a></li>";
 
@@ -133,10 +133,10 @@ if (isset($_SESSION["username"])){
 
           <form action="" method="post">
             <h3>tell us something!</h3>
-            <input type="text" name="name" maxlength="50" class="box" placeholder="enter your name" required>
-            <input type="email" name="email" maxlength="50" class="box" placeholder="enter your email" required>
-            <textarea name="msg" class="box" required placeholder="enter your message" maxlength="500" cols="30" rows="10"></textarea>
-            <input type="submit" value="send message" name="send" class="btn">
+            <input type="text" name="name" maxlength="50" style="font-weight: 600;" class="box" value="<?php echo ucwords($user['username']) ?>" required readonly>
+            <input type="email" name="email" maxlength="50" style="font-weight: 600;" class="box" value="<?php echo ucwords($user['email']) ?>" required readonly>
+            <textarea name="msg" class="box" style="font-weight: 600;" required placeholder="Enter your message" maxlength="500" cols="30" rows="10"></textarea>
+            <input type="submit" style="cursor: pointer; font-size: 16px; width: 120px; font-weight: 600;" value="Send Message" name="send" class="btn">
           </form>
 
       </div>
@@ -149,13 +149,29 @@ if (isset($_SESSION["username"])){
 if(isset($_POST['send'])){
 
     $nama = $_POST['name'];
-    $nama = filter_var($nama, FILTER_SANITIZE_STRING);
+    // $nama = filter_var($nama, FILTER_SANITIZE_STRING);
     $email = $_POST['email'];
-    $email = filter_var($email, FILTER_SANITIZE_STRING);
+    // $email = filter_var($email, FILTER_SANITIZE_STRING);
     $saran = $_POST['msg'];
-    $saran = filter_var($saran, FILTER_SANITIZE_STRING);
+    // $saran = filter_var($saran, FILTER_SANITIZE_STRING);
 
-    $result = mysqli_query($conn, "INSERT INTO `saran` VALUES('','$id','$nama','$email','$saran')");
+    $result = mysqli_query($conn, "INSERT INTO saran VALUES('','$id','$nama','$email','$saran')");
+    
+    if ( $result ) {
+      echo"
+        <script>
+          alert('Saran berhasil ditambah');
+          document.location.href = 'kontak.php';
+        </script>
+      ";
+    }else{
+      echo"
+        <script>
+          alert('Saran gagal ditambah');
+          document.location.href = 'kontak.php';
+        </script>
+      ";
+    }
 }
 ?>
     <script src="scriptidx.js"></script>
