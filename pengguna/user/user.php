@@ -23,6 +23,7 @@
     <link rel="icon" href="../../assets/AZ.ico">
     <title>AnharZtore</title>
     <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../style_footer.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -128,24 +129,10 @@
                     </div>
                 </div>
             </div>
-
             <!-- footer -->
-            <footer class="footerAbout">
-                <div class="footer">
-                    <p>
-                        Jangan lupa belanja di AnharZtore, serta follow akun ig kami <a href="https://www.instagram.com/anharZtore/" id="ig"> @anharZtore </a>
-                    </p>
-                </div>
-                    <div id="kontak">
-                        <i class="fa fa-whatsapp"> 085845723207 </i>
-                        <i class="fa fa-instagram"> anharZtore </i>
-                        <i class="fa fa-envelope-o"> anharZtore@gmail.com </i>
-                        <i class="fa fa-github"> anharZtore </i>
-                    </div>
-                    <p> @Copyright 2022 - anharZtore - Made with HTML, CSS, JS, & PHP </p>
-            </footer>
         </div> 
     </div>
+    <?php include'../../footer.php' ?>
     <script src="../../scriptidx.js"></script>
 </body>
 </html>
