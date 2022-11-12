@@ -46,7 +46,7 @@
             <form action="" class="search_barang" method="GET">
                 <div class="btn-kelola">
                     <button> <a href="kelola.php">Kembali</a> </button>
-                    <button> <a href="../../produk/tambah.php">Tambah Produk</a> </button>
+                    <button style="width: 150px"> <a href="../../produk/tambah.php">Tambah Produk</a> </button>
                 </div>
                 <div class="search" style="width: 45%;">
                     <input type="text" placeholder="Cari data yang anda inginkan" maxlength="50" class="anu_search" name="cari" style="color: #ffffff;">

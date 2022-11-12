@@ -73,18 +73,16 @@ if ($_SESSION["priv"] != "admin") {
           $result = mysqli_query($conn, "SELECT * FROM produk");
         }
         while ($row = mysqli_fetch_assoc($result)) {
-          echo "<div  class='produk' 
-                      style='
-                          background: rgba(255, 255, 255, 0.25);'>";
-          echo "<a href='../detail-produk.php?id=$row[id_produk]'><img src='../img/$row[gambar]' alt='Gambar Produk'></a>";
-          echo "<div  class='deskripsi-produk' 
-                      style='
-                      background: rgba(255, 255, 255, 0.25);'>";
-          echo "<a href='../detail-produk.php?id=$row[id_produk]'><h4 class='judul' style='color: #ffffff;'>$row[nama]</h4></a>";
-          $harga = number_format($row['harga'],0,'.','.');
-          echo "<p class='harga'>Rp $harga</p>";
-          echo "<a href='../cek_login.php?id=$row[id_produk]' class='btn-produk'>Beli Sekarang</a>";
-          echo "</div>";
+          echo "<div class='produk'>";
+            echo "<a href='../detail-produk.php?id=$row[id_produk]'><img src='../img/$row[gambar]' alt='Gambar Produk'></a>";
+            echo "<div class='deskripsi-produk'>";
+              echo "<a href='../detail-produk.php?id=$row[id_produk]'><h4 class='judul' style='color: #ffffff;'>$row[nama]</h4></a>";
+              $harga = number_format($row['harga'],0,'.','.');
+              echo "<div class='bagianBawah'>";
+                echo "<p class='harga'>Rp $harga</p>";
+                echo "<a href='../cek_login.php?id=$row[id_produk]' class='btn-produk'>Beli Sekarang</a>";
+              echo "</div>";
+            echo "</div>";
           echo "</div>";
         }
         ?>

@@ -6,14 +6,24 @@
 
     require '../koneksi.php';
 
+    $id = $_GET['id'];
+    $result = mysqli_query( $conn, "SELECT * FROM pesanan
+                            INNER JOIN user ON pesanan.id_user = user.id_user
+                            INNER JOIN produk ON pesanan.id_produk = produk.id_produk
+                            WHERE id_pesanan = '$id'"
+                            );
+    $pesanan = [];
+    while ($row = mysqli_fetch_array($result)) {
+        $pesanan[] = $row;
+    }
+    foreach($pesanan as $pesan);
+
     if (isset($_POST["tambah"])) {
         $id = $_GET['id'];
         $status = $_POST["status"];
-
+        
         $sql = "UPDATE pesanan SET `status` = '$status' WHERE id_pesanan = '$id'";
-
         $result = mysqli_query($conn, $sql);
-
         if ( $result ) {
             echo"
                 <script>
@@ -69,19 +79,6 @@
             <form method="post" action="">
                 <h2>Form Update Data Pesanan</h2>
                 <div class="order-detail">
-                    <?php 
-                        $id = $_GET['id'];
-                        $result = mysqli_query( $conn, "SELECT * FROM pesanan
-                                                INNER JOIN user ON pesanan.id_user = user.id_user
-                                                INNER JOIN produk ON pesanan.id_produk = produk.id_produk
-                                                WHERE id_pesanan = '$id'"
-                                                );
-                        $pesanan = [];
-                        while ($row = mysqli_fetch_array($result)) {
-                            $pesanan[] = $row;
-                        }
-                        foreach ($pesanan as $pesan);
-                    ?>
                     <div class="input">
                         <span class="detail"> Username </span>
                         <input name="nama" type="text" value="<?php echo ucwords($pesan['username']) ?>" readonly
@@ -140,7 +137,7 @@
                     </div>
                     <div class="input">
                         <span class="detail">Status </span>
-                        <select name="status" id="">
+                        <select name="status" id="" required>
                             <option value="">-</option>
                             <option value="menunggu">Menunggu</option>
                             <option value="berhasil">Berhasil</option>

@@ -317,9 +317,9 @@ nav {
 
 .produk {
     width: 15%;
-    border: 2px solid rgba(0, 0, 0, 0.25);
+    border: 2px solid rgba(0, 0, 0, 0.3);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     text-align: center;
@@ -327,12 +327,12 @@ nav {
     margin-top: 25px;
     margin-left: 25px;
     margin-right: 25px;
-    background: #eeeeee;
+    background: rgba(255, 255, 255, 0.25);
     transition: all 0.5s;
 }
 
 .produk:hover {
-    border: 2px solid rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(250, 2, 46, 0.75);
 }
 
 .produk img {
@@ -347,12 +347,16 @@ nav {
 }
 
 .produk .deskripsi-produk {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     width: 100%;
     padding: 5px 0;
-    background: #d3ece9;
+    background: rgba(255, 255, 255, 0.25);
     padding-bottom: 18px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    min-height: 162px;
 }
 
 .produk .deskripsi-produk a {
@@ -388,16 +392,15 @@ nav {
     font-weight: 600;
     letter-spacing: 0.5px;
     padding: 8px 10px;
-    margin-bottom: 0;
     border-radius: 5px;
     color: #eeeeee;
     background: #212529;
 } 
 
 .produk .deskripsi-produk .btn-produk:hover {
-    color: #dc3545;
+    color: #fa022e;
     background: #d3ece9;
-    border: 1px solid #dc3545;
+    border: 1px solid #fa022e;
 }
 
 /* review */
@@ -537,6 +540,7 @@ footer .fa {
 
 .bawah {
     padding-top: 70px;
+    background: var(--Bawah-color);
     background: var(--Bawah-color);
     background-size: cover;
     width: 100%;

@@ -105,9 +105,9 @@ html, body{
 }
 
 .product-div-right .btn-produk:hover {
-    color: #dc3545;
+    color: #fa022e;
     background: rgba(255, 255, 255, 0.3);
-    border: 1px solid #dc3545;
+    border: 1px solid #fa022e;
 }
 
 @media screen and (max-width: 992px){

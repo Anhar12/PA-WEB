@@ -32,14 +32,14 @@
             if ( $result ) {
                 echo"
                     <script>
-                        alert('Data berhasil diubah');
+                        alert('Data berhasil ditambah');
                         document.location.href = '../pengguna/admin/kelola-barang.php';
                     </script>
                 ";
             }else{
                 echo"
                     <script>
-                        alert('Data gagal diubah');
+                        alert('Data gagal ditambah');
                         document.location.href = '../pengguna/admin/kelola-barang.php';
                     </script>
                 ";
@@ -100,7 +100,7 @@
                     </div>
                     <div class="input">
                         <span class="detail">Stock</span>
-                        <input name="stock" type="text" placeholder="999" required>
+                        <input name="stock" type="text" placeholder="17" required>
                     </div>
                     <div class="input">
                         <span class="detail">Gambar</span>
@@ -108,7 +108,7 @@
                     </div>
                     <div class="input">
                         <span class="detail">Deskripsi</span>
-                        <textarea name="deskripsi" id="" cols="30" rows="10" placeholder="Ram 16GB"></textarea>
+                        <textarea name="deskripsi" id="" cols="30" rows="10" placeholder="Ram 4GB"></textarea>
                     </div>
                     <div class="submitButton">
                         <input type="submit" value="Submit" name="tambah">

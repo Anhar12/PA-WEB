@@ -38,7 +38,7 @@ if (isset($_SESSION["username"])){
           <?php 
               if (isset($_SESSION["username"])){
                 echo "<li> <a href='../pengguna/user/user.php'> HOME </a></li>";
-                echo "<li> <a href='list_barang.php' style='color: #FA022E;'> PRODUCT </a></li>";
+                echo "<li> <a href='list_barang.php' style='color: #fa022e;'> PRODUCT </a></li>";
                 echo "<li> <a href='../pesanan/pesanan_user.php'> ORDER </a></li>";
                 echo "<li> <a href='../kontak.php?id=$id'> CONTACT </a></li>";
                 echo "<li> <a href='../pengguna/user/profile.php?id=$id'> PROFILE </a></li>";
@@ -46,7 +46,7 @@ if (isset($_SESSION["username"])){
               }
               else {
                 echo "<li> <a href='../index.php'> HOME </a></li>";
-                echo "<li> <a href='list_barang.php' style='color: #FA022E;'> PRODUCT </a></li>";
+                echo "<li> <a href='list_barang.php' style='color: #fa022e;'> PRODUCT </a></li>";
                 echo "<li> <a href='../login.php'> LOGIN </a></li>";
               }
           ?>
@@ -91,18 +91,16 @@ if (isset($_SESSION["username"])){
           $result = mysqli_query($conn, "SELECT * FROM produk");
         }
         while ($row = mysqli_fetch_assoc($result)) {
-          echo "<div  class='produk' 
-                      style='
-                          background: rgba(255, 255, 255, 0.25);'>";
-          echo "<a href='../detail-produk.php?id=$row[id_produk]'><img src='../img/$row[gambar]' alt='Gambar Produk'></a>";
-          echo "<div  class='deskripsi-produk' 
-                      style='
-                      background: rgba(255, 255, 255, 0.25);'>";
-          echo "<a href='../detail-produk.php?id=$row[id_produk]'><h4 class='judul' style='color: #ffffff;'>$row[nama]</h4></a>";
-          $harga = number_format($row['harga'],0,'.','.');
-          echo "<p class='harga'>Rp $harga</p>";
-          echo "<a href='../cek_login.php?id=$row[id_produk]' class='btn-produk'>Beli Sekarang</a>";
-          echo "</div>";
+          echo "<div class='produk'>";
+            echo "<a href='../detail-produk.php?id=$row[id_produk]'><img src='../img/$row[gambar]' alt='Gambar Produk'></a>";
+            echo "<div class='deskripsi-produk'>";
+              echo "<a href='../detail-produk.php?id=$row[id_produk]'><h4 class='judul' style='color: #ffffff;'>$row[nama]</h4></a>";
+              $harga = number_format($row['harga'],0,'.','.');
+              echo "<div class='bagianBawah'>";
+                echo "<p class='harga'>Rp $harga</p>";
+                echo "<a href='../cek_login.php?id=$row[id_produk]' class='btn-produk'>Beli Sekarang</a>";
+              echo "</div>";
+            echo "</div>";
           echo "</div>";
         }
         ?>
