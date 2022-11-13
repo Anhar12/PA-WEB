@@ -41,6 +41,7 @@ if (isset($_GET['delete'])) {
     }
 
     .messages .box-container .box p {
+      text-align: left;
       padding: .5rem 0;
       font-size: 20px;
       color: #34495e;

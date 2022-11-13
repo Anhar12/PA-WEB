@@ -34,7 +34,14 @@
             </div>
             <div class="sec about">
                 <h2> Visit? </h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.8434630398622!2d117.15432088589677!3d-0.4649973355260488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df679c20fdf36ab%3A0x424c611a41445bd7!2sWADAR!5e0!3m2!1sid!2sid!4v1668215031015!5m2!1sid!2sid" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.8434630398622!2d117.15432088589677!3d-0.4649973355260488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df679c20fdf36ab%3A0x424c611a41445bd7!2sWADAR!5e0!3m2!1sid!2sid!4v1668215031015!5m2!1sid!2sid" 
+                    width="100%" 
+                    height="77%";
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
             <div class="sec about">
                 <h2> Contact Us </h2>
