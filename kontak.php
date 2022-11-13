@@ -86,6 +86,12 @@ if (isset($_SESSION["username"])){
       background-color: #f86909;
       color:#222;
     }
+    @media (max-width: 745px){
+      .contact .row .image img{
+        width: 100%;
+        padding: 0;
+      }
+    }
     </style>
   </head>
 
