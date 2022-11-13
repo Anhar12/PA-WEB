@@ -73,6 +73,16 @@ if (isset($_GET['delete'])) {
       text-shadow: 0 0 4px #e5ebb2;
       text-decoration: none;
     }
+    @media screen and (max-width: 550px){
+      .messages .box-container .box p{
+        font-size: 18px;
+      }
+    }
+    @media screen and (max-width: 425px){
+      .messages .box-container .box p{
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 
