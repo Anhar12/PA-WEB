@@ -31,6 +31,7 @@ if ($_SESSION["priv"] != "admin") {
           <li> <a href="../pengguna/admin/admin.php"> HOME </a></li>
           <li> <a href="" style="color: #fa022e;"> PRODUCT </a></li>
           <li> <a href="../pengguna/admin/kelola.php"> DASHBOARD </a></li>
+          <li> <a href="../pengguna/admin/messages.php"> MESSAGES </a></li>
           <li> <a href="../logout.php"> LOGOUT </a></li>
           <li>
             <label>

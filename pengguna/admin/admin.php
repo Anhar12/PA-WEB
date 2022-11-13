@@ -30,6 +30,7 @@
                     <li> <a href="" style="color: #fa022e;"> HOME </a></li>
                     <li> <a href="../../produk/admin_list_barang.php"> PRODUCT </a></li>
                     <li> <a href="kelola.php"> DASHBOARD </a></li>
+                    <li> <a href="messages.php"> MESSAGES </a></li>
                     <li> <a href="../../logout.php"> LOGOUT </a></li>
                     <li>
                         <label>
