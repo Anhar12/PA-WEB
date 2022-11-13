@@ -860,7 +860,7 @@ table a{
     }
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 745px){
     body{
         width: 100%;
     }
@@ -1069,6 +1069,17 @@ table a{
     .boxPesanan img{
         width: 45%;
     }
+    .messages .box-container .box{
+        width: 80%;
+        height: 80%;
+        margin: auto;
+    }
+    .contact .row{
+        flex-direction: column;
+    }
+    .contact .row form {
+        width: 70%;
+    }
 }
 
 @media screen and (max-width: 550px){
@@ -1085,6 +1096,10 @@ table a{
     .produk {
         margin: 10px;
         width: 40%;
+    }
+    .messages .box-container .box{
+        width: 60%;
+        height: 70%;
     }
 }
 
@@ -1293,4 +1308,8 @@ table a{
         font-size: 20px;
         height: 25px;
     } 
+    .messages .box-container .box{
+        width: 50%;
+        height: 70%;
+    }
 }
