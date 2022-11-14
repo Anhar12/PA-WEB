@@ -18,23 +18,43 @@
     }
     foreach($pesanan as $pesan);
 
-    if (isset($_POST["tambah"])) {
+    if (isset($_POST["ubah"])) {
         $id = $_GET['id'];
         $status = $_POST["status"];
-        
-        $sql = "UPDATE pesanan SET `status` = '$status' WHERE id_pesanan = '$id'";
-        $result = mysqli_query($conn, $sql);
-        if ( $result ) {
+        if ($status != $pesan['status']){
+            if ($status == "berhasil"){
+                $result = mysqli_query($conn, "SELECT * FROM produk WHERE id_produk = $pesan[id_produk]");
+                $data_produk = [];
+                while($row = mysqli_fetch_array($result)){
+                    $data_produk[] = $row;
+                }
+                foreach ($data_produk as $produk);
+                if ($pesan['jumlah'] <= $produk['stock']){
+                    $stock_terbaru = $produk['stock'] - $pesan['jumlah'];
+                    $result = mysqli_query($conn, "UPDATE produk SET stock = $stock_terbaru WHERE id_produk = $pesan[id_produk]");
+                }
+            }
+            $sql = "UPDATE pesanan SET `status` = '$status' WHERE id_pesanan = '$id'";
+            $result = mysqli_query($conn, $sql);
+            if ( $result ) {
+                echo"
+                    <script>
+                        alert('Data berhasil diubah');
+                        document.location.href = '../pengguna/admin/kelola-pesanan.php';
+                    </script>
+                ";
+            }else{
+                echo"
+                    <script>
+                        alert('Data gagal diubah');
+                        document.location.href = '../pengguna/admin/kelola-pesanan.php';
+                    </script>
+                ";
+            }
+        }
+        else {
             echo"
                 <script>
-                    alert('Data berhasil diubah');
-                    document.location.href = '../pengguna/admin/kelola-pesanan.php';
-                </script>
-            ";
-        }else{
-            echo"
-                <script>
-                    alert('Data gagal diubah');
                     document.location.href = '../pengguna/admin/kelola-pesanan.php';
                 </script>
             ";
@@ -138,14 +158,21 @@
                     <div class="input">
                         <span class="detail">Status </span>
                         <select name="status" id="" required>
-                            <option value="">-</option>
-                            <option value="menunggu">Menunggu</option>
-                            <option value="berhasil">Berhasil</option>
-                            <option value="gagal">Gagal</option>
+                        <?php 
+                        if ($pesan['status'] != 'menunggu'){
+                            $status = ucwords($pesan['status']);
+                            echo "<option value='$pesan[status]' readonly >$status</option>";
+                        }else {
+                            echo "<option value=''>-</option>";
+                            echo "<option value='menunggu'>Menunggu</option>";
+                            echo "<option value='berhasil'>Berhasil</option>";
+                            echo "<option value='gagal'>Gagal</option>";
+                        }
+                        ?>
                         </select>
                     </div>
                     <div class="submitButton">
-                        <input type="submit" value="Submit" name="tambah">
+                        <input type="submit" value="Submit" name="ubah">
                     </div>
                     <div class="kelola">
                         <button><a href="../pengguna/admin/kelola-pesanan.php">Kembali</a> </button>
