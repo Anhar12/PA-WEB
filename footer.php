@@ -52,7 +52,7 @@
                     </li>
                     <li>
                         <span> <i class="fa fa-phone" aria-hidden="true"></i> </span>
-                        <span> <a href="tel:6287766554433"> +62 8776 6554 433</a> <br> <a href="tel:6287766554433" id="tel2"> +62 8776 6554 433</a> </span>
+                        <span> <a href="tel:6287766554433"> +62 8776 6554 433</a></span>
                     </li>
                     <li>
                         <span> <i class="fa fa-envelope-o" aria-hidden="true"> </i> </span>
