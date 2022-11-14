@@ -208,6 +208,16 @@
                     </div>
                 </div>
                     <?php 
+                        if ($pesan['status'] == "berhasil"){
+                            $result = mysqli_query($conn, "SELECT * FROM produk WHERE id_produk = $pesan[id_produk]");
+                            $data_produk = [];
+                            while($row = mysqli_fetch_array($result)){
+                                $data_produk[] = $row;
+                            }
+                            foreach ($data_produk as $produk);
+                            $stock_terbaru = $produk['stock'] - $pesan['jumlah'];
+                            $result = mysqli_query($conn, "UPDATE produk SET stock = $stock_terbaru WHERE id_produk = $pesan[id_produk]");
+                        }
                         endforeach;
                     }
                 ?>
