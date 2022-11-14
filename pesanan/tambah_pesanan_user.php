@@ -14,10 +14,29 @@
     foreach ($data as $user);
     $id_user = $user["id_user"];
 
+    $id_produk = $_SESSION["produk"];
+    $result = mysqli_query( $conn, "SELECT * FROM produk WHERE id_produk = '$id_produk'");
+    $data_produk = [];
+    while ($row = mysqli_fetch_array($result)) {
+        $data_produk[] = $row;
+    }
+    foreach ($data_produk as $produk);
+
     if (isset($_POST["lanjutkan"])){
         $jumlah = $_POST["jumlah"];
-        header("Location: pembayaran.php?id=$jumlah");
-        return;
+        if ($jumlah > $produk['stock']){
+            echo"
+                <script>
+                    alert('Jumlah Pesanan Lebih dari Stock');
+                    // inin
+                    document.location.href = '../pengguna/admin/kelola-pesanan.php';
+                </script>
+            ";
+        }
+        else {
+            header("Location: pembayaran.php?id=$jumlah");
+            return;
+        }
     }
 ?>
 
@@ -59,15 +78,6 @@
             <form method="post" action="">
                 <h2>Form Tambah Data Pesanan</h2>
                 <div class="order-detail">
-                    <?php 
-                        $id_produk = $_SESSION["produk"];
-                        $result = mysqli_query( $conn, "SELECT * FROM produk WHERE id_produk = '$id_produk'");
-                        $data_produk = [];
-                        while ($row = mysqli_fetch_array($result)) {
-                            $data_produk[] = $row;
-                        }
-                        foreach ($data_produk as $produk);
-                    ?>
                     <div class="input">
                         <span class="detail"> Username </span>
                         <input name="nama" type="text" value="<?php echo ucwords($user['username']) ?>" readonly 

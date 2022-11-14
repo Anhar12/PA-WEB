@@ -40,7 +40,7 @@ require 'koneksi.php';
 
         <!-- main content -->
         <div class="deskripsi">
-            <h1> AnharZtore SmartPhone </h1>
+            <h1> Anhar Ztore SmartPhone </h1>
             <p> Smartphone store terbaik di Samarinda, dapat memberikan layanan terbaik mulai dari penjualan yang murah meriah, aman di kantong, serta amanah dan istiqomah </p>
             <p> Ayo! Tunggu apalagi, segera belanja di AnharZtore! </p>
         </div>

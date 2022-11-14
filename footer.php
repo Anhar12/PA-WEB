@@ -56,18 +56,18 @@
                     </li>
                     <li>
                         <span> <i class="fa fa-envelope-o" aria-hidden="true"> </i> </span>
-                        <span> smartphoneJoss@gmail.com </span>
+                        <span> AnharZtore@gmail.com </span>
                     </li>
                     <li>
                         <span> <i class="fa fa-instagram" aria-hidden="true"> </i> </span>
-                        <span> @smartphoneJoss </span>
+                        <span> @AnharZtore </span>
                     </li>
                 </ul>
             </div>
         </div>
     </footer>
     <div class="copyright">
-        <p> Copyright © 2022 CS Smartphone </p>
+        <p> Copyright © 2022 Anhar Ztore </p>
     </div>
 </body>
 </html>
